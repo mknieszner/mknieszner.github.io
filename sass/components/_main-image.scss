@@ -1,6 +1,7 @@
 .main-image {
   position: relative;
   grid-area: 1 / 2 / 3 / 3;
+  align-self: center;
   margin: 0 2rem;
   min-width: 45vw;
   max-width: 45vw;
