@@ -1,0 +1,82 @@
+.main-image {
+  position: relative;
+  grid-area: 1 / 2 / 3 / 3;
+  margin: 0 2rem;
+  min-width: 45vw;
+  max-width: 45vw;
+
+  @include respond(tab-land) {
+    display: none;
+  }
+}
+
+svg#main_logo {
+  height: 80%;
+  max-height: 90vh;
+  max-width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  padding: 0 5px;
+}
+
+#st0 {
+  fill: url(#blue-gradient);
+  filter: url(#blue-shadow);
+  fill-opacity: 0.4;
+  box-shadow: 3rem 3rem 5rem rgba($color-black, .8);
+  transform-origin: 50% 50%;
+  animation: 2s animateBlue forwards infinite cubic-bezier(1,-0.94,.49,1.43);
+
+  &:hover .st0 {
+    animation: 2s animateOpacity forwards infinite ease-out;
+  }
+}
+
+#st1 {
+  fill: url(#green-gradient);
+  filter: url(#green-shadow);
+  fill-opacity: 0.4;
+  animation: 2.5s animateGreen forwards infinite cubic-bezier(1,-0.94,.49,1.43);
+
+  &:hover .st1 {
+    animation: 2s animateOpacity forwards infinite ease-out;
+  }
+}
+
+#st2 {
+  fill: url(#violet-gradient);
+  filter: url(#violet-shadow);
+  fill-opacity: 0.4;
+  animation: 2.2s animateViolet forwards infinite cubic-bezier(1,-0.94,.49,1.43);
+
+  &:hover .st2 {
+    animation: 2s animateOpacity forwards infinite ease-out;
+  }
+}
+
+#st3 {
+  fill: url(#red-gradient);
+  filter: url(#red-shadow);
+  transform-origin: 50% 50%;
+  fill-opacity: 0.4;
+  animation: 2.7s animateRed forwards infinite cubic-bezier(1,-0.94,.49,1.43);
+
+  &:hover .st3 {
+    animation: 2s animateOpacity forwards infinite ease-out;
+  }
+}
+
+#st4 {
+  fill: url(#yellow-gradient);
+  filter: url(#yellow-shadow);
+  fill-opacity: 0.4;
+  animation: 2.9s animateYellow forwards infinite cubic-bezier(1,-0.94,.49,1.43);
+
+  &:hover .st4 {
+    animation: 2s animateOpacity forwards infinite ease-out;
+  }
+}

@@ -1,0 +1,108 @@
+
+@keyframes animateBlue {
+  from {
+    fill: url(#blue-gradient);
+  }
+
+  to {
+    fill: url(#blue-gradient-invert);
+  }
+}
+
+@keyframes animateGreen {
+  from {
+    fill: url(#green-gradient);
+  }
+
+  to {
+    fill: url(#green-gradient-invert);
+  }
+}
+
+@keyframes animateYellow {
+  from {
+    fill: url(#yellow-gradient);
+  }
+
+  to {
+    fill: url(#yellow-gradient-invert);
+  }
+}
+
+@keyframes animateRed {
+  from {
+    fill: url(#red-gradient);
+  }
+
+  to {
+    fill: url(#red-gradient-invert);
+  }
+}
+
+@keyframes animateViolet {
+  from {
+    fill: url(#violet-gradient);
+  }
+
+  to {
+    fill: url(#violet-gradient-invert);
+  }
+}
+
+@keyframes animateOpacity {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+
+  80% {
+    transform: translateX(-1rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+
+  80% {
+    transform: translateX(1rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(10rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

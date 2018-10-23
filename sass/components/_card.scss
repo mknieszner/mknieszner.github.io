@@ -1,0 +1,137 @@
+.card-container {
+  width: 0;
+  display: flex;
+  height: 100%;
+  transition: opacity 2s ease-out;
+  background-color: transparent;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  overflow: hidden;
+
+  &:target {
+    width: 50vw;
+    opacity: 1;
+  }
+
+  @include respond(tab-land) {
+    width: 97vw;
+
+    &:target {
+      width: 97vw;
+    }
+
+    & .btn--transparent {
+      display: none;
+    }
+  }
+
+  @include respond(phone) {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+
+
+  }
+}
+
+.card {
+  width: 90%;
+  height: 90%;
+  border-radius: 25px;
+  color: $color-grey-light-1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &__header {
+    max-width: 100%;
+    margin: 2rem 2rem 0 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-items: center;
+  }
+
+  &__icon {
+    min-width: 12rem;
+    @include respond(phone) {
+      min-width: 10rem;
+      width: 10rem;
+    }
+  }
+
+  &__header-text {
+    display: flex;
+    margin: 2rem 2rem 0 2rem;
+    font-size: 5rem;
+    font-weight: 100;
+    text-transform: uppercase;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__content {
+    margin: 2rem;
+    margin-bottom: auto;
+    text-align: justify;
+    color: $color-white;
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: end;
+    margin: 3rem;
+  }
+
+  &--me {
+    box-shadow: 1rem 1rem 1rem rgba($color-blue-3, .3);
+    background-image: linear-gradient(
+                    .5turn,
+                    rgba($color-blue-1, .1),
+                    rgba($color-blue-1, .6),
+                    rgba($color-blue-2, .1));
+  }
+  &--work {
+    box-shadow: 1rem 1rem 1rem rgba($color-green-3, .3);
+    background-image: linear-gradient(
+                    .5turn,
+                    rgba($color-green-1, .1),
+                    rgba($color-green-1, .6),
+                    rgba($color-green-2, .1));
+  }
+  &--education {
+    box-shadow: 1rem 1rem 1rem rgba($color-red-3, .3);
+    background-image: linear-gradient(
+                    .5turn,
+                    rgba($color-red-1, .1),
+                    rgba($color-red-1, .6),
+                    rgba($color-red-2, .1));
+
+    & .card__header-text {
+      font-size: 3rem;
+    }
+  }
+  &--personal-projects {
+    box-shadow: 1rem 1rem 1rem rgba($color-violet-3, .3);
+    background-image: linear-gradient(
+                    .5turn,
+                    rgba($color-violet-1, .1),
+                    rgba($color-violet-1, .6),
+                    rgba($color-violet-2, .1));
+
+    & .card__header-text {
+      font-size: 3rem;
+    }
+  }
+  &--free-time {
+    box-shadow: 1rem 1rem 1rem rgba($color-yellow-3, .3);
+    background-image: linear-gradient(
+                    .5turn,
+                    rgba($color-yellow-1, .1),
+                    rgba($color-yellow-1, .6),
+                    rgba($color-yellow-2, .1));
+    border-radius: 25px;
+  }
+}
+

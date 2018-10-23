@@ -1,0 +1,23 @@
+.btn--transparent {
+  &,
+  &:link,
+  &:visited {
+    text-decoration: none;
+  }
+  font-size: $small-font-size;
+  padding: 1rem 3rem;
+  border-radius: 100px;
+  background-color: rgba($color-black, .1);
+  box-shadow: 0 1rem 3rem rgba($color-black, .4);
+  color: $color-white;
+  transition: all .2s;
+
+  &:hover {
+    transform: translateY(-3px);
+  }
+
+  &:active {
+    transform: translateY(-1px);
+    box-shadow: 0 .5rem 0 rgba($color-black, .2);
+  }
+}

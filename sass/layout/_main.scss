@@ -1,0 +1,43 @@
+.main-container {
+  margin: 2rem;
+  background-image: linear-gradient(
+                  0.3turn,
+                  rgba($color-dark-blue-1, .2),
+                  rgba($color-black, .5),
+                  rgba($color-dark-blue-2, .2)),
+  url("/img/card-back.png");
+  height: 95vh;
+  display: grid;
+  grid-template-columns: min-content minmax(45vw, 1fr);
+  justify-content: space-between;
+  justify-items: center;
+
+  @include respond(tab-port) {
+    height: 100vh;
+    margin: 0;
+  }
+
+  &:target {
+    display: none;
+  }
+}
+
+#st0:hover .st0 {
+    animation: 1s animateOpacity forwards 1 ease-out;
+}
+
+.main_content__card:hover {
+    animation: 1s animateOpacity forwards 1 ease-out;
+}
+
+.copyright {
+  font-size: .7rem;
+  position: fixed;
+  bottom: 2.5rem;
+  right: 2rem;
+  z-index: 100;
+
+  @include respond(tab-port) {
+    bottom: 1rem;
+  }
+}
