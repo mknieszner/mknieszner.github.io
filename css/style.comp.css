@@ -262,7 +262,7 @@ body {
   .navigation__item {
     margin: 1rem; }
     .navigation__item--me {
-      color: #7ed56f; }
+      color: #5374a6; }
   .navigation__link:link, .navigation__link:visited {
     display: inline-block;
     padding: 1rem 2rem;
@@ -383,13 +383,11 @@ svg#main_logo {
   height: 80%;
   max-height: 90vh;
   max-width: 100%;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
   padding: 0 5px; }
+  svg#main_logo::after {
+    content: "";
+    display: table;
+    clear: both; }
 
 #st0 {
   fill: url(#blue-gradient);
@@ -522,69 +520,6 @@ svg#main_logo {
     background-image: linear-gradient(0.5turn, rgba(250, 200, 99, 0.1), rgba(250, 200, 99, 0.6), rgba(244, 185, 42, 0.1));
     border-radius: 25px; }
 
-.btn, .btn:link, .btn:visited {
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 1.5rem 4rem;
-  display: inline-block;
-  border-radius: 100rem;
-  transition: all .2s;
-  position: relative;
-  border: none;
-  cursor: pointer; }
-
-.btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 1.5rem 2rem rgba(0, 0, 0, 0.2); }
-  .btn:hover::after {
-    transform: scaleX(1.4) scaleY(1.7);
-    opacity: 0; }
-
-.btn:active, .btn:focus {
-  outline: none;
-  transform: translateY(-1px);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
-
-.btn--white {
-  color: #777;
-  background-color: #fff; }
-  .btn--white::after {
-    background-color: #fff; }
-
-.btn::after {
-  content: "";
-  display: inline-block;
-  height: 100%;
-  width: 100%;
-  border-radius: 10rem;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  transition: all .4s; }
-
-.btn--animated {
-  animation: moveInBottom .5s ease-out .75s;
-  animation-fill-mode: backwards; }
-
-.btn-text:link, .btn-text:visited {
-  font-size: 1.6rem;
-  color: #5500a7;
-  display: inline-block;
-  text-decoration: none;
-  border-bottom: 1px solid #7ed56f;
-  padding: 0.3rem; }
-
-.btn-text:hover {
-  background-color: #7ed56f;
-  color: #fff;
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
-  transform: translateY(-2px); }
-
-.btn-text:active {
-  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.15);
-  transform: translateY(0); }
-
 .btn--transparent {
   font-size: 1rem;
   padding: 1rem 3rem;
@@ -593,10 +528,10 @@ svg#main_logo {
   box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.4);
   color: #fff;
   transition: all .2s; }
-  .btn--transparent:link, .btn--transparent:visited {
+  .btn--transparent, .btn--transparent:link, .btn--transparent:visited {
     text-decoration: none; }
   .btn--transparent:hover {
     transform: translateY(-3px); }
   .btn--transparent:active {
     transform: translateY(-1px);
-    box-shadow: 0 0.5rem 0rem rgba(0, 0, 0, 0.2); }
+    box-shadow: 0 0.5rem 0 rgba(0, 0, 0, 0.2); }

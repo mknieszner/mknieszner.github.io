@@ -14,12 +14,7 @@ svg#main_logo {
   height: 80%;
   max-height: 90vh;
   max-width: 100%;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
+  @include clearfix;
   padding: 0 5px;
 }
 
