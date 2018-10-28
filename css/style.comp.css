@@ -193,14 +193,19 @@ body {
   animation: 1s animateOpacity forwards 1 ease-out; }
 
 .copyright {
-  font-size: .7rem;
+  font-size: 1rem;
   position: fixed;
   bottom: 2.5rem;
   right: 2rem;
-  z-index: 100; }
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  padding: 1rem; }
   @media only screen and (max-width: 56.25em) {
     .copyright {
       bottom: 1rem; } }
+  .copyright img {
+    width: 3rem; }
 
 .navigation {
   display: none; }
@@ -440,6 +445,7 @@ svg#main_logo {
   width: 0;
   display: flex;
   transition: opacity 2s ease-out;
+  transform-style: preserve-3d;
   background-color: transparent;
   align-items: center;
   justify-content: center;
@@ -466,31 +472,72 @@ svg#main_logo {
   height: 90%;
   border-radius: 25px;
   color: #f7f7f7;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between; }
+  position: relative;
+  transform-style: preserve-3d; }
+  .card:hover .card__side--front {
+    transform: rotateY(180deg); }
+  .card:hover .card__side--back {
+    transform: rotateY(0deg); }
+  .card__side {
+    width: 100%;
+    height: 100%;
+    transition: all 1.5s ease-in-out;
+    position: absolute;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    border-radius: 10px; }
+    .card__side--back {
+      transform: rotateY(-180deg); }
+    .card__side--me {
+      box-shadow: 1rem 1rem 1rem rgba(67, 97, 134, 0.3);
+      background-image: linear-gradient(175deg, transparent 30%, rgba(83, 116, 166, 0.1) 75%, rgba(83, 116, 166, 0.2)), linear-gradient(100deg, transparent 30%, rgba(83, 116, 166, 0.1) 70%, rgba(91, 129, 182, 0.2)); }
+    .card__side--work {
+      box-shadow: 1rem 1rem 1rem rgba(155, 190, 46, 0.3);
+      background-image: linear-gradient(175deg, transparent 30%, rgba(135, 190, 52, 0.1) 75%, rgba(155, 190, 46, 0.2)), linear-gradient(100deg, transparent 30%, rgba(169, 190, 46, 0.1) 70%, rgba(155, 190, 46, 0.2)); }
+    .card__side--education {
+      box-shadow: 1rem 1rem 1rem rgba(249, 118, 94, 0.3);
+      background-image: linear-gradient(175deg, transparent 30%, rgba(236, 73, 73, 0.1) 75%, rgba(236, 95, 103, 0.1)), linear-gradient(100deg, transparent 30%, rgba(236, 73, 73, 0.1) 70%, rgba(236, 95, 103, 0.1)), radial-gradient(circle at 0 0, transparent, transparent 70%, rgba(135, 190, 52, 0.1)); }
+    .card__side--personal-projects {
+      box-shadow: 1rem 1rem 2rem rgba(85, 0, 167, 0.3);
+      background-image: linear-gradient(175deg, transparent 30%, rgba(85, 0, 167, 0.1) 75%, rgba(77, 0, 154, 0.2)), linear-gradient(100deg, transparent 30%, rgba(71, 0, 142, 0.1) 70%, rgba(77, 0, 154, 0.2)), radial-gradient(circle at 0 0, transparent, transparent 70%, rgba(236, 73, 73, 0.15)); }
+    .card__side--free-time {
+      box-shadow: 1rem 1rem 1rem rgba(244, 172, 0, 0.3);
+      background-image: linear-gradient(175deg, transparent 30%, rgba(250, 200, 99, 0.1) 75%, rgba(244, 185, 42, 0.2)), linear-gradient(100deg, transparent 30%, rgba(250, 200, 99, 0.1) 70%, rgba(244, 185, 42, 0.2)), radial-gradient(circle at 0 0, transparent, transparent 70%, rgba(85, 0, 167, 0.1)); }
+  .card__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    backface-visibility: hidden;
+    transform: translateZ(100px); }
   .card__header {
     max-width: 100%;
-    margin: 2rem 2rem 0 2rem;
-    display: grid;
+    margin: 2rem;
+    display: flex;
+    flex-direction: column;
     grid-template-columns: repeat(2, 1fr);
-    align-items: center;
-    justify-items: center; }
+    transform: translateZ(150px); }
   .card__icon {
-    min-width: 12rem; }
+    margin-top: 2rem;
+    margin-left: 2rem;
+    width: 8rem;
+    height: 8rem;
+    min-width: 3rem;
+    fill: #fff; }
     @media only screen and (max-width: 37.5em) {
       .card__icon {
         min-width: 10rem;
         width: 10rem; } }
   .card__header-text {
-    display: flex;
-    margin: 2rem 2rem 0 2rem;
-    font-size: 5rem;
+    text-align: right;
+    font-size: 4rem;
     font-weight: 100;
-    text-transform: uppercase;
-    justify-content: center;
-    align-items: center; }
-  .card__content {
+    text-transform: uppercase; }
+  .card__main {
     margin: 2rem;
     margin-bottom: auto;
     text-align: justify;
@@ -499,26 +546,6 @@ svg#main_logo {
     display: flex;
     justify-content: end;
     margin: 3rem; }
-  .card--me {
-    box-shadow: 1rem 1rem 1rem rgba(67, 97, 134, 0.3);
-    background-image: linear-gradient(0.5turn, rgba(83, 116, 166, 0.1), rgba(83, 116, 166, 0.6), rgba(91, 129, 182, 0.1)); }
-  .card--work {
-    box-shadow: 1rem 1rem 1rem rgba(155, 190, 46, 0.3);
-    background-image: linear-gradient(0.5turn, rgba(135, 190, 52, 0.1), rgba(135, 190, 52, 0.6), rgba(158, 190, 63, 0.1)); }
-  .card--education {
-    box-shadow: 1rem 1rem 1rem rgba(249, 118, 94, 0.3);
-    background-image: linear-gradient(0.5turn, rgba(236, 73, 73, 0.1), rgba(236, 73, 73, 0.6), rgba(236, 95, 103, 0.1)); }
-    .card--education .card__header-text {
-      font-size: 3rem; }
-  .card--personal-projects {
-    box-shadow: 1rem 1rem 1rem rgba(71, 0, 142, 0.3);
-    background-image: linear-gradient(0.5turn, rgba(85, 0, 167, 0.1), rgba(85, 0, 167, 0.6), rgba(77, 0, 154, 0.1)); }
-    .card--personal-projects .card__header-text {
-      font-size: 3rem; }
-  .card--free-time {
-    box-shadow: 1rem 1rem 1rem rgba(244, 172, 0, 0.3);
-    background-image: linear-gradient(0.5turn, rgba(250, 200, 99, 0.1), rgba(250, 200, 99, 0.6), rgba(244, 185, 42, 0.1));
-    border-radius: 25px; }
 
 .btn--transparent {
   font-size: 1rem;
