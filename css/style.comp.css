@@ -116,6 +116,14 @@ body {
     opacity: 1;
     transform: translateY(0); } }
 
+@keyframes animateStroke {
+  from {
+    fill-opacity: 0;
+    stroke-dashoffset: 150; }
+  to {
+    fill-opacity: 1;
+    stroke-dashoffset: 0; } }
+
 *,
 *::after,
 *::before {
@@ -437,6 +445,66 @@ svg#main_logo {
   animation: 2.9s animateYellow forwards infinite cubic-bezier(1, -0.94, 0.49, 1.43); }
   #st4:hover .st4 {
     animation: 2s animateOpacity forwards infinite ease-out; }
+
+#st0-icon {
+  stroke: #436186;
+  fill: #436186;
+  filter: url(#blue-shadow);
+  stroke-opacity: 0.6;
+  stroke-width: 1px;
+  stroke-dasharray: 150;
+  stroke-dashoffset: 150; }
+
+#st1-icon {
+  stroke: #a9be2e;
+  fill: #9bbe2e;
+  filter: url(#green-shadow);
+  stroke-opacity: 0.2;
+  stroke-width: 0.5px;
+  stroke-dasharray: 150;
+  stroke-dashoffset: 150; }
+
+#st2-icon {
+  stroke: #47008e;
+  fill: #47008e;
+  stroke-opacity: 0.4;
+  filter: url(#violet-shadow);
+  stroke-width: 1px;
+  stroke-dasharray: 150;
+  stroke-dashoffset: 150; }
+
+#st3-icon {
+  stroke: #ec4949;
+  fill: #ec4949;
+  filter: url(#red-shadow);
+  stroke-opacity: 0.2;
+  stroke-width: 1px;
+  stroke-dasharray: 150;
+  stroke-dashoffset: 150; }
+
+#st4-icon:not(:first-child) {
+  stroke: #f4ac00;
+  fill: #f4ac00;
+  filter: url(#yellow-shadow);
+  stroke-opacity: 0.2;
+  stroke-width: 1px;
+  stroke-dasharray: 150;
+  stroke-dashoffset: 150; }
+
+#st0-icon:hover .st0-icon {
+  animation: 4s animateStroke infinite alternate; }
+
+#st1-icon:hover .st1-icon {
+  animation: 4s animateStroke infinite alternate; }
+
+#st2-icon:hover .st2-icon {
+  animation: 4s animateStroke infinite alternate; }
+
+#st3-icon:hover .st3-icon {
+  animation: 4s animateStroke infinite alternate; }
+
+#st4-icon:hover .st4-icon {
+  animation: 4s animateStroke infinite alternate; }
 
 .card-container {
   grid-area: 1 / 1 / 3 / 2; }

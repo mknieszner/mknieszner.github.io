@@ -25,7 +25,7 @@ svg#main_logo {
   fill-opacity: 0.4;
   box-shadow: 3rem 3rem 5rem rgba($color-black, .8);
   transform-origin: 50% 50%;
-  animation: 2s animateBlue forwards infinite cubic-bezier(1,-0.94,.49,1.43);
+  animation: 2s animateBlue forwards infinite cubic-bezier(1, -0.94, .49, 1.43);
 
   &:hover .st0 {
     animation: 2s animateOpacity forwards infinite ease-out;
@@ -36,7 +36,7 @@ svg#main_logo {
   fill: url(#green-gradient);
   filter: url(#green-shadow);
   fill-opacity: 0.4;
-  animation: 2.5s animateGreen forwards infinite cubic-bezier(1,-0.94,.49,1.43);
+  animation: 2.5s animateGreen forwards infinite cubic-bezier(1, -0.94, .49, 1.43);
 
   &:hover .st1 {
     animation: 2s animateOpacity forwards infinite ease-out;
@@ -47,7 +47,7 @@ svg#main_logo {
   fill: url(#violet-gradient);
   filter: url(#violet-shadow);
   fill-opacity: 0.4;
-  animation: 2.2s animateViolet forwards infinite cubic-bezier(1,-0.94,.49,1.43);
+  animation: 2.2s animateViolet forwards infinite cubic-bezier(1, -0.94, .49, 1.43);
 
   &:hover .st2 {
     animation: 2s animateOpacity forwards infinite ease-out;
@@ -59,7 +59,7 @@ svg#main_logo {
   filter: url(#red-shadow);
   transform-origin: 50% 50%;
   fill-opacity: 0.4;
-  animation: 2.7s animateRed forwards infinite cubic-bezier(1,-0.94,.49,1.43);
+  animation: 2.7s animateRed forwards infinite cubic-bezier(1, -0.94, .49, 1.43);
 
   &:hover .st3 {
     animation: 2s animateOpacity forwards infinite ease-out;
@@ -70,9 +70,87 @@ svg#main_logo {
   fill: url(#yellow-gradient);
   filter: url(#yellow-shadow);
   fill-opacity: 0.4;
-  animation: 2.9s animateYellow forwards infinite cubic-bezier(1,-0.94,.49,1.43);
+  animation: 2.9s animateYellow forwards infinite cubic-bezier(1, -0.94, .49, 1.43);
 
   &:hover .st4 {
     animation: 2s animateOpacity forwards infinite ease-out;
+  }
+}
+
+#st0-icon {
+  stroke: $color-blue-3;
+  fill: $color-blue-3;
+  filter: url(#blue-shadow);
+  stroke-opacity: 0.6;
+  stroke-width: 1px;
+  stroke-dasharray: 150;
+  stroke-dashoffset: 150;
+}
+
+#st1-icon {
+  stroke: $color-green-4;
+  fill: $color-green-3;
+  filter: url(#green-shadow);
+  stroke-opacity: 0.2;
+  stroke-width: 0.5px;
+  stroke-dasharray: 150;
+  stroke-dashoffset: 150;
+}
+
+#st2-icon {
+  stroke: $color-violet-3;
+  fill: $color-violet-3;
+  stroke-opacity: 0.4;
+  filter: url(#violet-shadow);
+  stroke-width: 1px;
+  stroke-dasharray: 150;
+  stroke-dashoffset: 150;
+}
+
+#st3-icon {
+  stroke: $color-red-1;
+  fill: $color-red-1;
+  filter: url(#red-shadow);
+  stroke-opacity: 0.2;
+  stroke-width: 1px;
+  stroke-dasharray: 150;
+  stroke-dashoffset: 150;
+}
+
+#st4-icon {
+  &:not(:first-child) {
+    stroke: $color-yellow-3;
+    fill: $color-yellow-3;
+    filter: url(#yellow-shadow);
+    stroke-opacity: 0.2;
+    stroke-width: 1px;
+    stroke-dasharray: 150;
+    stroke-dashoffset: 150;
+  }
+}
+
+#st0-icon {
+  &:hover .st0-icon{
+    animation: 4s animateStroke infinite alternate;
+  }
+}
+#st1-icon {
+  &:hover .st1-icon{
+    animation: 4s animateStroke infinite alternate;
+  }
+}
+#st2-icon {
+  &:hover .st2-icon{
+    animation: 4s animateStroke infinite alternate;
+  }
+}
+#st3-icon {
+  &:hover .st3-icon{
+    animation: 4s animateStroke infinite alternate;
+  }
+}
+#st4-icon {
+  &:hover .st4-icon{
+    animation: 4s animateStroke infinite alternate;
   }
 }
