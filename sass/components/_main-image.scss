@@ -1,10 +1,14 @@
 .main-image {
   position: relative;
-  grid-area: 1 / 2 / 3 / 3;
+  grid-area: 1 / 2 / 2 / 3;
   align-self: center;
   margin: 0 2rem;
-  min-width: 45vw;
-  max-width: 45vw;
+  width: 90%;
+  height: 90%;
+  padding: 5% 0;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
 
   @include respond(tab-land) {
     display: none;
@@ -17,6 +21,18 @@ svg#main_logo {
   max-width: 100%;
   @include clearfix;
   padding: 0 5px;
+}
+
+path, circle {
+  cursor: pointer;
+}
+
+a {
+  &:active,
+  &:focus,
+  &:hover {
+    outline: none
+  }
 }
 
 #st0 {
@@ -48,6 +64,7 @@ svg#main_logo {
   filter: url(#violet-shadow);
   fill-opacity: 0.4;
   animation: 2.2s animateViolet forwards infinite cubic-bezier(1, -0.94, .49, 1.43);
+  cursor: pointer;
 
   &:hover .st2 {
     animation: 2s animateOpacity forwards infinite ease-out;
@@ -81,18 +98,18 @@ svg#main_logo {
   stroke: $color-blue-3;
   fill: $color-blue-3;
   filter: url(#blue-shadow);
-  stroke-opacity: 0.6;
-  stroke-width: 1px;
+  stroke-opacity: 0;
+  stroke-width: 2px;
   stroke-dasharray: 150;
   stroke-dashoffset: 150;
 }
 
 #st1-icon {
-  stroke: $color-green-4;
   fill: $color-green-3;
+  stroke: $color-green-4;
   filter: url(#green-shadow);
-  stroke-opacity: 0.2;
-  stroke-width: 0.5px;
+  stroke-opacity: 0;
+  stroke-width: 1px;
   stroke-dasharray: 150;
   stroke-dashoffset: 150;
 }
@@ -100,9 +117,9 @@ svg#main_logo {
 #st2-icon {
   stroke: $color-violet-3;
   fill: $color-violet-3;
-  stroke-opacity: 0.4;
+  stroke-opacity: 0;
   filter: url(#violet-shadow);
-  stroke-width: 1px;
+  stroke-width: 3px;
   stroke-dasharray: 150;
   stroke-dashoffset: 150;
 }
@@ -111,46 +128,48 @@ svg#main_logo {
   stroke: $color-red-1;
   fill: $color-red-1;
   filter: url(#red-shadow);
-  stroke-opacity: 0.2;
-  stroke-width: 1px;
+  stroke-opacity: 0;
+  stroke-width: 2px;
   stroke-dasharray: 150;
-  stroke-dashoffset: 150;
+
 }
 
 #st4-icon {
-  &:not(:first-child) {
-    stroke: $color-yellow-3;
-    fill: $color-yellow-3;
-    filter: url(#yellow-shadow);
-    stroke-opacity: 0.2;
-    stroke-width: 1px;
-    stroke-dasharray: 150;
-    stroke-dashoffset: 150;
-  }
+  stroke: $color-yellow-3;
+  fill: $color-yellow-3;
+  filter: url(#yellow-shadow);
+  stroke-opacity: 0;
+  stroke-width: 2px;
+  stroke-dasharray: 150;
+
 }
 
 #st0-icon {
-  &:hover .st0-icon{
-    animation: 4s animateStroke infinite alternate;
+  &:hover .st0-icon {
+    animation: 3s animateStroke ease-in-out infinite alternate;
   }
 }
+
 #st1-icon {
-  &:hover .st1-icon{
-    animation: 4s animateStroke infinite alternate;
+  &:hover .st1-icon {
+    animation: 3s animateStroke ease-in-out infinite alternate;
   }
 }
+
 #st2-icon {
-  &:hover .st2-icon{
-    animation: 4s animateStroke infinite alternate;
+  &:hover .st2-icon {
+    animation: 3s animateStroke ease-in-out infinite alternate;
   }
 }
+
 #st3-icon {
-  &:hover .st3-icon{
-    animation: 4s animateStroke infinite alternate;
+  &:hover .st3-icon {
+    animation: 3s animateStroke ease-in-out infinite alternate;
   }
 }
+
 #st4-icon {
-  &:hover .st4-icon{
-    animation: 4s animateStroke infinite alternate;
+  &:hover .st4-icon {
+    animation: 3s animateStroke ease-in-out infinite alternate;
   }
 }

@@ -11,10 +11,18 @@
     <title>My playground</title>
 </head>
 <body>
-
+<div class="language-navigation">
+    <div class="btn btn--white btn--lang btn--lang-pl" onclick="changeLang('PL')">
+        PL
+    </div>
+    <div class="btn btn--white btn--lang btn--lang-en" onclick="changeLang('EN')">
+        EN
+    </div>
+</div>
 <main class="main-container">
     <div id="" class="main-image">
-        <svg version="1.1" id="main_logo" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" x="0px" y="0px" viewBox="0 0 320 284" style="enable-background:new 0 0 250 250;" xml:space="preserve">
+        <svg version="1.1" id="main_logo" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" x="0px"
+             y="0px" viewBox="0 0 320 284" style="enable-background:new 0 0 250 250;" xml:space="preserve">
             <a href="#me">
                 <g id="st0">
                     <path class="st0" d="M49.2,96.3C45.6,83,32,75.2,18.7,78.7S-2.4,95.9,1.2,109.1c1.7,6.3,5.6,11.3,10.6,14.5C26.5,133,24.3,141,20,147.8v0.1
@@ -177,7 +185,7 @@
                         c0.3,0,0.6,0,0.9,0c0.2,0,0.5,0,0.7,0l0,0c0.2,0,0.5,0.1,0.7,0.1c0.1,0,0.2,0,0.3,0.1c3.3,0.7,6,3.3,6.7,6.8
                         C231.6,275.4,228.6,279.9,223.9,280.8z"/>
                 </g>
-                <g  id="st2-icon">
+                <g id="st2-icon">
                     <circle fill="transparent" cx="245" cy="131.4" r="19.9"/>
                     <path class="st2-icon" d="M255.5,117.7c-1.6,0-2.9,1.3-2.9,2.9c0,0.5,0.1,1,0.4,1.4l-4.8,4.8c-0.7-0.5-1.5-0.8-2.4-0.8s-1.7,0.3-2.4,0.8l-3.8-3.8
                         c0.2-0.3,0.3-0.6,0.3-1c0-1.1-0.9-2-2-2c-1.1,0-2,0.9-2,2c0,1.1,0.9,2,2,2c0.4,0,0.7-0.1,1-0.3l3.8,3.8c-0.5,0.7-0.8,1.5-0.8,2.4
@@ -220,17 +228,28 @@
                         c8.1-2.2,16.4,2.6,18.5,10.7C98.8,161.5,94,169.8,85.9,172z"/>
                 </g>
                 <g id="st3-icon">
-                    <circle fill="transparent" onclick="self.location.href = '#education'" cx="81.8" cy="157.3" r="15.2"/>
-                    <path class="st3-icon" d="M85.1,147.4H73.7v21.2h16.6v-16L85.1,147.4z M85.4,148.6l3.7,3.7h-3.7V148.6z M74.4,167.9v-19.8h10.2v4.9h4.9v14.8H74.4z"/>
-                    <path class="st3-icon" d="M77.2,153.4h3.2c0.2,0,0.4-0.2,0.4-0.4c0-0.2-0.2-0.4-0.4-0.4h-3.2c-0.2,0-0.4,0.2-0.4,0.4C76.9,153.2,77,153.4,77.2,153.4 z"/>
-                    <path class="st3-icon" d="M77.2,156.2H79c0.2,0,0.4-0.2,0.4-0.4s-0.2-0.4-0.4-0.4h-1.8c-0.2,0-0.4,0.2-0.4,0.4S77,156.2,77.2,156.2z"/>
-                    <path class="st3-icon" d="M82.5,156.2H85c0.2,0,0.4-0.2,0.4-0.4s-0.2-0.4-0.4-0.4h-2.5c-0.2,0-0.4,0.2-0.4,0.4S82.3,156.2,82.5,156.2z"/>
-                    <path class="st3-icon" d="M80.5,155.6c-0.1,0.1-0.1,0.2-0.1,0.2c0,0.1,0,0.2,0.1,0.3c0.1,0.1,0.2,0.1,0.3,0.1c0.1,0,0.2,0,0.3-0.1 c0.1-0.1,0.1-0.2,0.1-0.2c0-0.1,0-0.2-0.1-0.3C80.9,155.5,80.6,155.5,80.5,155.6z"/>
-                    <path class="st3-icon" d="M86.8,156.2c0.1,0,0.2,0,0.3-0.1c0.1-0.1,0.1-0.2,0.1-0.3c0-0.1,0-0.2-0.1-0.3c-0.1-0.1-0.4-0.1-0.5,0 c-0.1,0.1-0.1,0.2-0.1,0.3c0,0.1,0,0.2,0.1,0.3C86.6,156.2,86.7,156.2,86.8,156.2z"/>
-                    <path class="st3-icon" d="M81.5,158.3H79c-0.2,0-0.4,0.2-0.4,0.4c0,0.2,0.2,0.4,0.4,0.4h2.5c0.2,0,0.4-0.2,0.4-0.4C81.8,158.5,81.7,158.3,81.5,158.3 z"/>
-                    <path class="st3-icon" d="M77.2,159c0.1,0,0.2,0,0.3-0.1c0.1-0.1,0.1-0.2,0.1-0.3c0-0.1,0-0.2-0.1-0.3c-0.1-0.1-0.4-0.1-0.5,0 c-0.1,0.1-0.1,0.2-0.1,0.3c0,0.1,0,0.2,0.1,0.3C77.1,159,77.1,159,77.2,159z"/>
-                    <path class="st3-icon" d="M78.3,161.6c-0.8,0.4-1,1.2-1.1,2c-0.1-0.1-0.3-0.2-0.4-0.4c-0.3-0.3-0.8,0.2-0.5,0.5c0.3,0.3,0.7,0.6,1,0.8 c0.2,0.2,0.6,0.1,0.6-0.2c0-0.8,0.1-1.7,0.8-2.1C79.1,162,78.7,161.4,78.3,161.6z"/>
-                    <path class="st3-icon" d="M80.7,163c-0.5,0.1-1,0.7-1.4,0c-0.2-0.4-0.8-0.1-0.6,0.4c0.2,0.4,0.5,0.6,0.9,0.7c0.2,0,0.4,0,0.6-0.1 c0.1-0.1,0.7-0.5,0.8-0.3c0.2,0.4,0.8,0,0.6-0.4C81.5,163,81.1,162.9,80.7,163z"/>
+                    <circle fill="transparent" onclick="self.location.href = '#education'" cx="81.8" cy="157.3"
+                            r="15.2"/>
+                    <path class="st3-icon"
+                          d="M85.1,147.4H73.7v21.2h16.6v-16L85.1,147.4z M85.4,148.6l3.7,3.7h-3.7V148.6z M74.4,167.9v-19.8h10.2v4.9h4.9v14.8H74.4z"/>
+                    <path class="st3-icon"
+                          d="M77.2,153.4h3.2c0.2,0,0.4-0.2,0.4-0.4c0-0.2-0.2-0.4-0.4-0.4h-3.2c-0.2,0-0.4,0.2-0.4,0.4C76.9,153.2,77,153.4,77.2,153.4 z"/>
+                    <path class="st3-icon"
+                          d="M77.2,156.2H79c0.2,0,0.4-0.2,0.4-0.4s-0.2-0.4-0.4-0.4h-1.8c-0.2,0-0.4,0.2-0.4,0.4S77,156.2,77.2,156.2z"/>
+                    <path class="st3-icon"
+                          d="M82.5,156.2H85c0.2,0,0.4-0.2,0.4-0.4s-0.2-0.4-0.4-0.4h-2.5c-0.2,0-0.4,0.2-0.4,0.4S82.3,156.2,82.5,156.2z"/>
+                    <path class="st3-icon"
+                          d="M80.5,155.6c-0.1,0.1-0.1,0.2-0.1,0.2c0,0.1,0,0.2,0.1,0.3c0.1,0.1,0.2,0.1,0.3,0.1c0.1,0,0.2,0,0.3-0.1 c0.1-0.1,0.1-0.2,0.1-0.2c0-0.1,0-0.2-0.1-0.3C80.9,155.5,80.6,155.5,80.5,155.6z"/>
+                    <path class="st3-icon"
+                          d="M86.8,156.2c0.1,0,0.2,0,0.3-0.1c0.1-0.1,0.1-0.2,0.1-0.3c0-0.1,0-0.2-0.1-0.3c-0.1-0.1-0.4-0.1-0.5,0 c-0.1,0.1-0.1,0.2-0.1,0.3c0,0.1,0,0.2,0.1,0.3C86.6,156.2,86.7,156.2,86.8,156.2z"/>
+                    <path class="st3-icon"
+                          d="M81.5,158.3H79c-0.2,0-0.4,0.2-0.4,0.4c0,0.2,0.2,0.4,0.4,0.4h2.5c0.2,0,0.4-0.2,0.4-0.4C81.8,158.5,81.7,158.3,81.5,158.3 z"/>
+                    <path class="st3-icon"
+                          d="M77.2,159c0.1,0,0.2,0,0.3-0.1c0.1-0.1,0.1-0.2,0.1-0.3c0-0.1,0-0.2-0.1-0.3c-0.1-0.1-0.4-0.1-0.5,0 c-0.1,0.1-0.1,0.2-0.1,0.3c0,0.1,0,0.2,0.1,0.3C77.1,159,77.1,159,77.2,159z"/>
+                    <path class="st3-icon"
+                          d="M78.3,161.6c-0.8,0.4-1,1.2-1.1,2c-0.1-0.1-0.3-0.2-0.4-0.4c-0.3-0.3-0.8,0.2-0.5,0.5c0.3,0.3,0.7,0.6,1,0.8 c0.2,0.2,0.6,0.1,0.6-0.2c0-0.8,0.1-1.7,0.8-2.1C79.1,162,78.7,161.4,78.3,161.6z"/>
+                    <path class="st3-icon"
+                          d="M80.7,163c-0.5,0.1-1,0.7-1.4,0c-0.2-0.4-0.8-0.1-0.6,0.4c0.2,0.4,0.5,0.6,0.9,0.7c0.2,0,0.4,0,0.6-0.1 c0.1-0.1,0.7-0.5,0.8-0.3c0.2,0.4,0.8,0,0.6-0.4C81.5,163,81.1,162.9,80.7,163z"/>
                     <path class="st3-icon" d="M87.9,159.6c-0.1,0-0.1-0.1-0.1-0.1c0,0,0-0.1,0-0.2c0.2-0.4,0.1-0.8-0.2-1.1c-0.3-0.3-0.7-0.4-1.1-0.2c-0.1,0-0.1,0-0.2,0
                         c0,0-0.1-0.1-0.1-0.1c-0.1-0.4-0.5-0.6-0.9-0.6c-0.4,0-0.7,0.2-0.9,0.6c0,0.1-0.1,0.1-0.1,0.1c0,0-0.1,0-0.2,0
                         c-0.4-0.2-0.8-0.1-1.1,0.2c-0.3,0.3-0.4,0.7-0.2,1.1c0,0.1,0,0.1,0,0.2c0,0-0.1,0.1-0.1,0.1c-0.4,0.1-0.6,0.5-0.6,0.9
@@ -286,7 +305,7 @@
                 </g>
                 <g id="st4-icon">
                     <circle fill="transparent" cx="157.2" cy="202.2" r="15.6"/>
-                    <path class="st4-icon"  d="M169.6,196.5C169.6,196.5,169.6,196.5,169.6,196.5c0-0.1,0-0.1,0-0.1c0,0,0,0,0,0c0,0,0-0.1,0-0.1c0,0,0,0,0,0c0,0,0,0,0,0
+                    <path class="st4-icon" d="M169.6,196.5C169.6,196.5,169.6,196.5,169.6,196.5c0-0.1,0-0.1,0-0.1c0,0,0,0,0,0c0,0,0-0.1,0-0.1c0,0,0,0,0,0c0,0,0,0,0,0
                         c0,0,0,0,0,0c0,0,0,0,0,0c0,0-0.1-0.1-0.1-0.1c0,0,0,0,0,0c0,0-0.1,0-0.1,0c0,0,0,0,0,0c0,0-0.1,0-0.1,0c0,0,0,0-0.1,0c0,0,0,0,0,0
                         l-24.8,5.1c-0.2,0-0.3,0.2-0.3,0.4c0,0.2,0.1,0.4,0.2,0.4l7.1,3.7l1.2,6.9c0,0,0,0,0,0c0,0,0,0.1,0,0.1c0,0,0,0,0,0
                         c0,0,0,0.1,0,0.1c0,0,0,0,0,0c0,0,0,0,0,0c0,0,0,0,0,0c0,0,0,0,0.1,0.1c0,0,0,0,0,0c0,0,0,0,0,0c0,0,0.1,0,0.1,0c0,0,0,0,0,0
@@ -297,55 +316,55 @@
                          M166.2,197.5l-14.5,7.4l-6-3.2L166.2,197.5z M163,212l-6.6-4.3l-1-0.6l12.9-9.5L163,212z"/>
                 </g>
             </a>
-            <radialGradient  id="blue-gradient" x2="1" y2="1">
-                <stop offset="0%" stop-color="#5374a6" />
-                <stop offset="50%" stop-color="#5b81b6" />
-                <stop offset="100%" stop-color="#436186" />
+            <radialGradient id="blue-gradient" x2="1" y2="1">
+                <stop offset="0%" stop-color="#5374a6"/>
+                <stop offset="50%" stop-color="#5b81b6"/>
+                <stop offset="100%" stop-color="#436186"/>
             </radialGradient>
-            <radialGradient  id="blue-gradient-invert" x2="1" y2="1">
-                <stop offset="0%" stop-color="#436186" />
-                <stop offset="50%" stop-color="#5b81b6" />
-                <stop offset="100%" stop-color="#5374a6" />
+            <radialGradient id="blue-gradient-invert" x2="1" y2="1">
+                <stop offset="0%" stop-color="#436186"/>
+                <stop offset="50%" stop-color="#5b81b6"/>
+                <stop offset="100%" stop-color="#5374a6"/>
             </radialGradient>
-            <radialGradient  id="green-gradient" x2="1" y2="1">
-                <stop offset="0%" stop-color="#87be34" />
-                <stop offset="50%" stop-color="#9ebe3f" />
-                <stop offset="100%" stop-color="#9bbe2e" />
+            <radialGradient id="green-gradient" x2="1" y2="1">
+                <stop offset="0%" stop-color="#87be34"/>
+                <stop offset="50%" stop-color="#9ebe3f"/>
+                <stop offset="100%" stop-color="#9bbe2e"/>
             </radialGradient>
-            <radialGradient  id="green-gradient-invert" x2="1" y2="1">
-                <stop offset="0%" stop-color="#9bbe2e" />
-                <stop offset="50%" stop-color="#9ebe3f" />
-                <stop offset="100%" stop-color="#87be34" />
+            <radialGradient id="green-gradient-invert" x2="1" y2="1">
+                <stop offset="0%" stop-color="#9bbe2e"/>
+                <stop offset="50%" stop-color="#9ebe3f"/>
+                <stop offset="100%" stop-color="#87be34"/>
             </radialGradient>
-            <radialGradient  id="red-gradient" x2="1" y2="1">
-                <stop offset="0%" stop-color="#f9765e" />
-                <stop offset="50%" stop-color="#ec5f67" />
-                <stop offset="100%" stop-color="#ec4949" />
+            <radialGradient id="red-gradient" x2="1" y2="1">
+                <stop offset="0%" stop-color="#f9765e"/>
+                <stop offset="50%" stop-color="#ec5f67"/>
+                <stop offset="100%" stop-color="#ec4949"/>
             </radialGradient>
-            <radialGradient  id="red-gradient-invert" x2="1" y2="1">
-                <stop offset="0%" stop-color="#ec4949" />
-                <stop offset="50%" stop-color="#ec5f67" />
-                <stop offset="100%" stop-color="#f9765e" />
+            <radialGradient id="red-gradient-invert" x2="1" y2="1">
+                <stop offset="0%" stop-color="#ec4949"/>
+                <stop offset="50%" stop-color="#ec5f67"/>
+                <stop offset="100%" stop-color="#f9765e"/>
             </radialGradient>
-            <radialGradient  id="yellow-gradient" x2="1" y2="1">
-                <stop offset="0%" stop-color="#fac863" />
-                <stop offset="50%" stop-color="#f4b92a" />
-                <stop offset="100%" stop-color="#f4ac00" />
+            <radialGradient id="yellow-gradient" x2="1" y2="1">
+                <stop offset="0%" stop-color="#fac863"/>
+                <stop offset="50%" stop-color="#f4b92a"/>
+                <stop offset="100%" stop-color="#f4ac00"/>
             </radialGradient>
-            <radialGradient  id="yellow-gradient-invert" x2="1" y2="1">
-                <stop offset="0%" stop-color="#f4ac00" />
-                <stop offset="50%" stop-color="#f4b92a" />
-                <stop offset="100%" stop-color="#fac863" />
+            <radialGradient id="yellow-gradient-invert" x2="1" y2="1">
+                <stop offset="0%" stop-color="#f4ac00"/>
+                <stop offset="50%" stop-color="#f4b92a"/>
+                <stop offset="100%" stop-color="#fac863"/>
             </radialGradient>
-            <radialGradient  id="violet-gradient" x2="1" y2="1">
-                <stop offset="0%" stop-color="#5500a7" />
-                <stop offset="50%" stop-color="#4d009a" />
-                <stop offset="100%" stop-color="#47008e" />
+            <radialGradient id="violet-gradient" x2="1" y2="1">
+                <stop offset="0%" stop-color="#5500a7"/>
+                <stop offset="50%" stop-color="#4d009a"/>
+                <stop offset="100%" stop-color="#47008e"/>
             </radialGradient>
-            <radialGradient  id="violet-gradient-invert" x2="1" y2="1">
-                <stop offset="0%" stop-color="#47008e" />
-                <stop offset="50%" stop-color="#4d009a" />
-                <stop offset="100%" stop-color="#5500a7" />
+            <radialGradient id="violet-gradient-invert" x2="1" y2="1">
+                <stop offset="0%" stop-color="#47008e"/>
+                <stop offset="50%" stop-color="#4d009a"/>
+                <stop offset="100%" stop-color="#5500a7"/>
             </radialGradient>
             <filter id="blue-shadow" x="0" y="0">
                 <feGaussianBlur in="SourceAlpha" stdDeviation="2.2"/>
@@ -410,6 +429,9 @@
                 <svg id="#nav-icon-work" class="nav-icon nav-icon--work">
                     <use href="img/svg/work.svg#work-icon"></use>
                 </svg>
+                <svg id="#nav-icon-work" class="nav-icon nav-icon--work-next">
+                    <use href="img/svg/work.svg#work-icon"></use>
+                </svg>
             </a>
             <a href="#personal-projects" class="tablet-navigation__link tablet-navigation__link--personal-projects">
                 <svg id="#nav-icon-personal-projects" class="nav-icon nav-icon--personal-projects">
@@ -437,20 +459,31 @@
                             <use xlink:href="img/svg/me.svg#me-icon"></use>
                         </svg>
                         <div class="card__header-text">
-                            BIO
+                            <div class="translate translate-pl">
+                                HELLO WORLD! :)
+                            </div>
+                            <div class="translate translate-en">
+                                HELLO WORLD! :)
+                            </div>
                         </div>
                     </div>
                     <div class="card__main">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium beatae dicta expedita
-                        libero
-                        maiores nam nobis recusandae similique vero vitae. Architecto assumenda aut distinctio facere
-                        fugiat
-                        quae quasi veniam vero.
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium beatae dicta expedita
-                        libero
-                        maiores nam nobis recusandae similique vero vitae. Architecto assumenda aut distinctio facere
-                        fugiat
-                        quae quasi veniam vero.
+                        <div class="translate translate-pl">
+                            PL Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium beatae dicta
+                            expedita
+                            libero maiores nam nobis recusandae similique vero vitae. Architecto assumenda aut
+                            distinctio facere fugiat quae quasi veniam vero.
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium beatae dicta expedita
+                            libero maiores nam nobis recusandae similique vero vitae. Architecto assumenda aut
+                            distinctio facere fugiat quae quasi veniam vero.
+                        </div>
+                        <div class="translate translate-en">
+                            EN Ribeye swine short loin drumstick cow turducken tenderloin shankle venison ground round.
+                            Frankfurter capicola tongue ham jerky chuck t-bone pork hamburger filet mignon cow shankle
+                            bresaola flank porchetta. Doner brisket shoulder drumstick jowl fatback tri-tip.
+                            Flank buffalo tenderloin short ribs strip steak ham hock. Pork beef prosciutto cupim tongue.
+                            Tenderloin frankfurter bresaola ham hock hamburger tongue shankle pork loin beef ribs.
+                        </div>
                     </div>
                     <div class="card__footer">
                     </div>
@@ -464,18 +497,13 @@
                     </div>
                     <div class="card__main">
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium beatae dicta expedita
-                        libero
-                        maiores nam nobis recusandae similique vero vitae. Architecto assumenda aut distinctio facere
-                        fugiat
-                        quae quasi veniam vero.
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium beatae dicta expedita
-                        libero
-                        maiores nam nobis recusandae similique vero vitae. Architecto assumenda aut distinctio facere
-                        fugiat
-                        quae quasi veniam vero.
+                        libero maiores nam nobis recusandae similique vero vitae. Architecto assumenda aut distinctio
+                        facere fugiat quae quasi veniam vero. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Accusantium beatae dicta expedita libero maiores nam nobis recusandae similique vero vitae.
+                        Architecto assumenda aut distinctio facere fugiat quae quasi veniam vero.
                     </div>
                     <div class="card__footer">
-                        <a class="btn--transparent" href="#">X</a>
+                        <a class="btn btn--transparent" href="#">X</a>
                     </div>
                 </div>
             </div>
@@ -495,15 +523,10 @@
                     </div>
                     <div class="card__main">
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium beatae dicta expedita
-                        libero
-                        maiores nam nobis recusandae similique vero vitae. Architecto assumenda aut distinctio facere
-                        fugiat
-                        quae quasi veniam vero.
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium beatae dicta expedita
-                        libero
-                        maiores nam nobis recusandae similique vero vitae. Architecto assumenda aut distinctio facere
-                        fugiat
-                        quae quasi veniam vero.
+                        libero maiores nam nobis recusandae similique vero vitae. Architecto assumenda aut distinctio
+                        facere fugiat quae quasi veniam vero. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Accusantium beatae dicta expedita libero maiores nam nobis recusandae similique vero vitae.
+                        Architecto assumenda aut distinctio facere fugiat quae quasi veniam vero.
                     </div>
                     <div class="card__footer">
                     </div>
@@ -513,18 +536,13 @@
                 <div class="card__content">
                     <div class="card__main">
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium beatae dicta expedita
-                        libero
-                        maiores nam nobis recusandae similique vero vitae. Architecto assumenda aut distinctio facere
-                        fugiat
-                        quae quasi veniam vero.
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium beatae dicta expedita
-                        libero
-                        maiores nam nobis recusandae similique vero vitae. Architecto assumenda aut distinctio facere
-                        fugiat
-                        quae quasi veniam vero.
+                        libero maiores nam nobis recusandae similique vero vitae. Architecto assumenda aut distinctio
+                        facere fugiat quae quasi veniam vero. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Accusantium beatae dicta expedita libero maiores nam nobis recusandae similique vero vitae.
+                        Architecto assumenda aut distinctio facere fugiat quae quasi veniam vero.
                     </div>
                     <div class="card__footer">
-                        <a class="btn--transparent" href="#">X</a>
+                        <a class="btn btn--transparent" href="#">X</a>
                     </div>
                 </div>
             </div>
@@ -544,15 +562,10 @@
                     </div>
                     <div class="card__main">
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium beatae dicta expedita
-                        libero
-                        maiores nam nobis recusandae similique vero vitae. Architecto assumenda aut distinctio facere
-                        fugiat
-                        quae quasi veniam vero.
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium beatae dicta expedita
-                        libero
-                        maiores nam nobis recusandae similique vero vitae. Architecto assumenda aut distinctio facere
-                        fugiat
-                        quae quasi veniam vero.
+                        libero maiores nam nobis recusandae similique vero vitae. Architecto assumenda aut distinctio
+                        facere fugiat quae quasi veniam vero. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Accusantium beatae dicta expedita libero maiores nam nobis recusandae similique vero vitae.
+                        Architecto assumenda aut distinctio facere fugiat quae quasi veniam vero.
                     </div>
                     <div class="card__footer">
                     </div>
@@ -562,18 +575,13 @@
                 <div class="card__content">
                     <div class="card__main">
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium beatae dicta expedita
-                        libero
-                        maiores nam nobis recusandae similique vero vitae. Architecto assumenda aut distinctio facere
-                        fugiat
-                        quae quasi veniam vero.
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium beatae dicta expedita
-                        libero
-                        maiores nam nobis recusandae similique vero vitae. Architecto assumenda aut distinctio facere
-                        fugiat
-                        quae quasi veniam vero.
+                        libero maiores nam nobis recusandae similique vero vitae. Architecto assumenda aut distinctio
+                        facere fugiat quae quasi veniam vero. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Accusantium beatae dicta expedita libero maiores nam nobis recusandae similique vero vitae.
+                        Architecto assumenda aut distinctio facere fugiat quae quasi veniam vero.
                     </div>
                     <div class="card__footer">
-                        <a class="btn--transparent" href="#">X</a>
+                        <a class="btn btn--transparent" href="#">X</a>
                     </div>
                 </div>
             </div>
@@ -625,7 +633,7 @@
                         </div>
                     </div>
                     <div class="card__footer">
-                        <a class="btn--transparent" href="#">X</a>
+                        <a class="btn btn--transparent" href="#">X</a>
                     </div>
                 </div>
             </div>
@@ -645,15 +653,10 @@
                     </div>
                     <div class="card__main">
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium beatae dicta expedita
-                        libero
-                        maiores nam nobis recusandae similique vero vitae. Architecto assumenda aut distinctio facere
-                        fugiat
-                        quae quasi veniam vero.
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium beatae dicta expedita
-                        libero
-                        maiores nam nobis recusandae similique vero vitae. Architecto assumenda aut distinctio facere
-                        fugiat
-                        quae quasi veniam vero.
+                        libero maiores nam nobis recusandae similique vero vitae. Architecto assumenda aut distinctio
+                        facere fugiat quae quasi veniam vero. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Accusantium beatae dicta expedita libero maiores nam nobis recusandae similique vero vitae.
+                        Architecto assumenda aut distinctio facere fugiat quae quasi veniam vero.
                     </div>
                     <div class="card__footer">
                     </div>
@@ -663,18 +666,13 @@
                 <div class="card__content">
                     <div class="card__main">
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium beatae dicta expedita
-                        libero
-                        maiores nam nobis recusandae similique vero vitae. Architecto assumenda aut distinctio facere
-                        fugiat
-                        quae quasi veniam vero.
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium beatae dicta expedita
-                        libero
-                        maiores nam nobis recusandae similique vero vitae. Architecto assumenda aut distinctio facere
-                        fugiat
-                        quae quasi veniam vero.
+                        libero maiores nam nobis recusandae similique vero vitae. Architecto assumenda aut distinctio
+                        facere fugiat quae quasi veniam vero. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Accusantium beatae dicta expedita libero maiores nam nobis recusandae similique vero vitae.
+                        Architecto assumenda aut distinctio facere fugiat quae quasi veniam vero.
                     </div>
                     <div class="card__footer">
-                        <a class="btn--transparent" href="#">X</a>
+                        <a class="btn btn--transparent" href="#">X</a>
                     </div>
                 </div>
             </div>
@@ -688,40 +686,41 @@
 
         </span>
     </label>
-    <div class="navigation__background">&nbsp;</div>
+    <div class="navigation__background"></div>
     <nav class="navigation__nav">
         <ul class="navigation__list">
             <li class="navigation__item">
                 <a href="#" class="navigation__link navigation__link--me">
-                    <label for="navi-toggle" onclick="self.location.href = '#me'">
+                    <label class="navigation__link-label" for="navi-toggle" onclick="self.location.href = '#me'">
                         <span>01</span>Bio
                     </label>
                 </a>
             </li>
             <li class="navigation__item">
                 <a href="#" class="navigation__link navigation__link--free-time">
-                    <label for="navi-toggle" onclick="self.location.href = '#free-time'">
+                    <label class="navigation__link-label" for="navi-toggle" onclick="self.location.href = '#free-time'">
                         <span>02</span>Free time
                     </label>
                 </a>
             </li>
             <li class="navigation__item">
                 <a href="#" class="navigation__link navigation__link--work">
-                    <label for="navi-toggle" onclick="self.location.href = '#work'">
+                    <label class="navigation__link-label" for="navi-toggle" onclick="self.location.href = '#work'">
                         <span>03</span>Work
                     </label>
                 </a>
             </li>
             <li class="navigation__item">
                 <a href="#" class="navigation__link navigation__link--personal-projects">
-                    <label for="navi-toggle" onclick="self.location.href = '#personal-projects'">
+                    <label class="navigation__link-label" for="navi-toggle"
+                           onclick="self.location.href = '#personal-projects'">
                         <span>04</span>Personal Projects
                     </label>
                 </a>
             </li>
             <li class="navigation__item">
                 <a href="#" class="navigation__link navigation__link--education">
-                    <label for="navi-toggle" onclick="self.location.href = '#education'">
+                    <label class="navigation__link-label" for="navi-toggle" onclick="self.location.href = '#education'">
                         <span>05</span>Education
                     </label>
                 </a>
@@ -729,24 +728,67 @@
         </ul>
     </nav>
 </div>
-<div class="copyright">
-    <img src="/img/no-javascript.svg?v=306" alt="No Javascript">
-    <span>&copy; All rights reserved</span>
-</div>
+<!--<div class="copyright">-->
+<!--<img src="/img/no-javascript.svg?v=306" alt="No Javascript">-->
+<!--<span>&copy; All rights reserved</span>-->
+<!--</div>-->
 <script type="text/javascript">
+
+    const containsInArray = function (firstArray, secondArray) {
+        for (let element of firstArray) {
+            if (secondArray.includes(element)) {
+                return true;
+            }
+        }
+        return false;
+    };
+
+    const findAllByClassNameAndChangeVisibility = function (className, displayIfContains, displayIfNotContains, exceptions) {
+        const all = document.getElementsByClassName(className);
+        for (let element of all) {
+            if (containsInArray(element.classList, exceptions)) {
+                element.style.display = displayIfContains;
+            } else {
+                element.style.display = displayIfNotContains;
+            }
+        }
+    };
+
+    const hideAllNonSelectedLanguageTexts = function (lang) {
+        const langClass = "translate";
+        const selectedLangClass = "translate-" + lang.toLowerCase();
+        findAllByClassNameAndChangeVisibility(langClass, "block", "none", [selectedLangClass]);
+    };
+
+    const hideSelectedLanguageButton = function (lang) {
+        const langButtonClass = "btn--lang";
+        const selectedLangButtonClass = "btn--lang-" + lang.toLowerCase();
+        findAllByClassNameAndChangeVisibility(langButtonClass, "none", "block", [selectedLangButtonClass]);
+    };
+
+    const changeLang = function (lang) {
+        hideAllNonSelectedLanguageTexts(lang);
+        hideSelectedLanguageButton(lang);
+    };
 
     function openMyJiraInNewWindow() {
         const win = window.open('https://my-jira.herokuapp.com/', '_blank');
         win.focus();
     }
 
-    var fetchMyJiraStatus = function () {
-        fetch('https://my-jira.herokuapp.com/health/running')
+    function fetchMyJiraStatus(url, timeout, limit) {
+        fetch(url)
             .then(function (response) {
+                console.log(response)
+                console.log(response);
+                if (response.status !== 200 && limit) {
+                    console.log(response)
+                    setTimeout(fetchMyJiraStatus(url, timeout, --limit), timeout);
+                }
                 return response.json()
             })
-            .then(function (ready) {
-                if (ready) {
+            .then(function (running) {
+                if (running) {
                     document.getElementById('my-jira-link-not-ready').style.display = 'none';
                     document.getElementById('my-jira-link-ready').style.display = 'block';
                 } else {
@@ -756,12 +798,12 @@
             .catch(function () {
                 document.getElementById('my-jira-link-not-ready').style.display = 'flex';
                 document.getElementById('my-jira-link-ready').style.display = 'none';
-            });
-    };
+            })
+    }
 
     const initMyJira = function () {
-        fetchMyJiraStatus();
-        setInterval(fetchMyJiraStatus, 10000);
+        fetchMyJiraStatus('https://my-jira.herokuapp.com/health/running', 10000, 10);
+        changeLang("PL");
     };
 
     initMyJira();

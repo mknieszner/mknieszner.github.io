@@ -28,8 +28,17 @@ body {
   position: relative;
   box-sizing: border-box;
 
-  @include respond(tab-port) {
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+
+  @include respond(tab-land) {
     padding: 0;
+    overflow: hidden;
+  }
+
+  @include respond(tab-port) {
+    overflow: auto;
   }
 }
 
