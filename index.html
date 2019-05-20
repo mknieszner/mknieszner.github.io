@@ -779,10 +779,7 @@
     function fetchMyJiraStatus(url, timeout, limit) {
         fetch(url)
             .then(function (response) {
-                console.log(response)
-                console.log(response);
                 if (response.status !== 200 && limit) {
-                    console.log(response)
                     setTimeout(fetchMyJiraStatus(url, timeout, --limit), timeout);
                 }
                 return response.json()
