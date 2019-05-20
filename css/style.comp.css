@@ -289,7 +289,7 @@ body {
       grid-template-columns: min-content minmax(45vw, 1fr);
       height: 100vh;
       margin: 0; } }
-  @media only screen and (min-aspect-ratio: 1 / 2) {
+  @media only screen and (max-width: 37.5em) {
     .main-container {
       display: block;
       height: auto;
@@ -308,7 +308,7 @@ body {
   @media only screen and (max-width: 56.25em) {
     .navigation {
       display: inline; } }
-  @media only screen and (min-aspect-ratio: 1 / 2) {
+  @media only screen and (max-width: 37.5em) {
     .navigation {
       display: none; } }
   .navigation__checkbox {
@@ -502,7 +502,7 @@ body {
   bottom: 30px;
   right: 50px;
   display: flex; }
-  @media only screen and (min-aspect-ratio: 1 / 2) {
+  @media only screen and (max-width: 37.5em) {
     .language-navigation {
       z-index: 1;
       position: absolute;
@@ -670,7 +670,7 @@ a:active, a:focus, a:hover {
         width: 97vw; }
       .card-container .btn--transparent {
         display: none; } }
-  @media only screen and (min-aspect-ratio: 1 / 2) {
+  @media only screen and (max-width: 37.5em) {
     .card-container {
       width: 100vw;
       height: 135vh;
@@ -691,7 +691,7 @@ a:active, a:focus, a:hover {
         transform: rotateY(0); } }
   .card:hover .card__side--back {
     transform: rotateY(0deg); }
-  @media only screen and (min-aspect-ratio: 1 / 2) {
+  @media only screen and (max-width: 37.5em) {
     .card {
       width: 100%; } }
   .card__side {
@@ -721,7 +721,7 @@ a:active, a:focus, a:hover {
           transform: rotateY(0);
           background-image: none !important;
           box-shadow: none !important; } }
-      @media only screen and (min-aspect-ratio: 1 / 2) {
+      @media only screen and (max-width: 37.5em) {
         .card__side--back {
           top: 70vh;
           height: 50vh; } }
@@ -765,7 +765,7 @@ a:active, a:focus, a:hover {
     height: 8rem;
     min-width: 3rem;
     fill: #fff; }
-    @media only screen and (min-aspect-ratio: 1 / 2) {
+    @media only screen and (max-width: 37.5em) {
       .card__icon {
         min-width: 10rem;
         width: 10rem; } }
@@ -779,7 +779,7 @@ a:active, a:focus, a:hover {
     margin-bottom: auto;
     text-align: justify;
     color: #fff; }
-    @media only screen and (min-aspect-ratio: 1 / 2) {
+    @media only screen and (max-width: 37.5em) {
       .card__main {
         text-align: center;
         font-size: 1.7rem; } }
