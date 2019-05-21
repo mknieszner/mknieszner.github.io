@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" type="image/png" href="img/favicon/favicon.ico">
     <title>My playground</title>
-    <script type='text/javascript' src='http://code.jquery.com/jquery-1.8.2.js'></script>
 </head>
 <body>
 <div class="language-navigation">
@@ -747,11 +746,11 @@
 
     const findAllByClassNameAndChangeVisibility = function (className, displayIfContains, displayIfNotContains, exceptions) {
         const all = document.getElementsByClassName(className);
-        for (let element of all) {
-            if (containsInArray(element.classList, exceptions)) {
-                element.style.display = displayIfContains;
+        for (let i = 0; i < all.length; i++) {
+            if (containsInArray(all[i].classList, exceptions)) {
+                all[i].style.display = displayIfContains;
             } else {
-                element.style.display = displayIfNotContains;
+                all[i].style.display = displayIfNotContains;
             }
         }
     };
@@ -809,20 +808,24 @@
         return color;
     };
 
-    const changeColor = function () {
-        let color = getRandomColor();
-        $('meta[name=theme-color]').remove();
-        $('head').append('<meta name="theme-color" content="' + color + '">');
+    const changeBrowserColor = function () {
+        const oldMeta = document.getElementsByName('theme-color')[0];
+        document.getElementsByTagName('head')[0].removeChild(oldMeta);
+
+        const newMeta = document.createElement('meta');
+        newMeta.name = "theme-color";
+        newMeta.content = getRandomColor();
+        document.getElementsByTagName('head')[0].appendChild(newMeta);
     };
 
-    const timeoutChangeColor = function () {
-        setInterval(changeColor, 1000);
+    const timeoutChangeBrowserColor = function () {
+        setInterval(changeBrowserColor, 1000);
     };
 
     const initMyJira = function () {
         fetchMyJiraStatus('https://my-jira.herokuapp.com/health/running', 10000, 10);
         changeLang("PL");
-        timeoutChangeColor();
+        timeoutChangeBrowserColor();
     };
 
     initMyJira();
