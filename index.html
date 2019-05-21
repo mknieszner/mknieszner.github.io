@@ -10,13 +10,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" type="image/png" href="img/favicon/favicon.ico">
     <title>My playground</title>
-    <!--<script>-->
-        <!--(function frameForwardingWorkAround() {-->
-            <!--if (screen.width < 600 || (screen.width < 900 && (screen.width/screen.height > 1))) {-->
-                <!--window.location.replace('http://m.knieszer.pl/');-->
-            <!--}-->
-        <!--})();-->
-    <!--</script>-->
+    <script type='text/javascript' src='http://code.jquery.com/jquery-1.8.2.js'></script>
 </head>
 <body>
 <div class="language-navigation">
@@ -806,9 +800,29 @@
             })
     }
 
+    const getRandomColor = function () {
+        const letters = '0123456789ABCDEF';
+        let color = '#';
+        for (let i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    };
+
+    const changeColor = function () {
+        let color = getRandomColor();
+        $('meta[name=theme-color]').remove();
+        $('head').append('<meta name="theme-color" content="' + color + '">');
+    };
+
+    const timeoutChangeColor = function () {
+        setInterval(changeColor, 1000);
+    };
+
     const initMyJira = function () {
         fetchMyJiraStatus('https://my-jira.herokuapp.com/health/running', 10000, 10);
         changeLang("PL");
+        timeoutChangeColor();
     };
 
     initMyJira();
