@@ -773,7 +773,7 @@
     };
 
     function openMyJiraInNewWindow() {
-        const win = window.open('https://my-jira.herokuapp.com/', '_blank');
+        const win = window.open('http://my-jira.knieszner.pl/', '_blank');
         win.focus();
     }
 
@@ -823,7 +823,7 @@
     };
 
     const initMyJira = function () {
-        fetchMyJiraStatus('https://my-jira.herokuapp.com/health/running', 10000, 10);
+        fetchMyJiraStatus('http://my-jira.knieszner.pl/health/running', 10000, 10);
         changeLang("PL");
         timeoutChangeBrowserColor();
     };
