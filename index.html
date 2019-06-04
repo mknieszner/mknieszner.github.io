@@ -749,7 +749,8 @@
 
 <script type="text/javascript">
     const onPageScroll = function () {
-
+        let touchLastX;
+        let touchStartX;
         let fronts = document.getElementsByClassName('card__side--front');
         let backs = document.getElementsByClassName('card__side--back');
 
@@ -769,16 +770,16 @@
         let nextIsFront;
         const bodyEl = document.querySelector('body');
         bodyEl.ontouchmove = (event) => {
-            touchLastY = event.touches[0].screenY;
+            touchLastX = event.touches[0].screenX;
         };
 
         bodyEl.ontouchstart = (event) => {
-            touchStartY = event.touches[0].screenY;
+            touchStartX = event.touches[0].screenX;
         };
 
         bodyEl.ontouchend = () => {
-            let rotateDirecion = (touchLastY - touchStartY) > 0;
-            if (rotateDirecion) {
+            let rotateDirection = (touchStartX - touchLastX) > 0;
+            if (rotateDirection) {
                 nextPageNr = nowIsFront ? nowPageNr : nowPageNr + 1;
                 nextIsFront = !nowIsFront;
                 if (nextPageNr !== backs.length) {
