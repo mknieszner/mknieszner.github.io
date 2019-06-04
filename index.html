@@ -760,7 +760,7 @@
     };
 
     const onPageScroll = function () {
-        let colors = ['#436186','#418910','#ec4949','#47008e', '#f4ac00'];
+        let colors = ['#436186','#418910','#651d32','#500778', '#7f7f00'];
         let touchLastX;
         let touchStartX;
         let fronts = document.getElementsByClassName('card__side--front');
@@ -774,6 +774,8 @@
             fronts[0].style.transform = "rotateY(0deg)";
             backs[0].style.transform = "rotateY(180deg)";
         }
+
+        changeBrowserColor(colors[0]);
 
 
         let nowPageNr = 0;
