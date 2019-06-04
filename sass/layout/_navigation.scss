@@ -311,9 +311,8 @@
   @include respond(phone) {
     z-index: 1;
     position: absolute;
-    right: 30px;
-    top: 30px;
-    bottom: unset;
+    right: 20px;
+    bottom: 20px;
     display: flex;
   }
 }

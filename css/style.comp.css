@@ -289,11 +289,6 @@ body {
       grid-template-columns: min-content minmax(45vw, 1fr);
       height: 100vh;
       margin: 0; } }
-  @media only screen and (max-width: 37.5em) {
-    .main-container {
-      display: block;
-      height: auto;
-      width: 100%; } }
   :not(.main-container:target) {
     display: none; }
 
@@ -506,9 +501,8 @@ body {
     .language-navigation {
       z-index: 1;
       position: absolute;
-      right: 30px;
-      top: 30px;
-      bottom: unset;
+      right: 20px;
+      bottom: 20px;
       display: flex; } }
 
 .main-image {
@@ -673,7 +667,7 @@ a:active, a:focus, a:hover {
   @media only screen and (max-width: 37.5em) {
     .card-container {
       width: 100vw;
-      height: 135vh;
+      height: 100vh;
       opacity: 1;
       align-items: self-start; } }
 
@@ -693,7 +687,8 @@ a:active, a:focus, a:hover {
     transform: rotateY(0deg); }
   @media only screen and (max-width: 37.5em) {
     .card {
-      width: 100%; } }
+      width: 100%;
+      height: 98%; } }
   .card__side {
     width: 100%;
     height: 100%;
@@ -706,11 +701,18 @@ a:active, a:focus, a:hover {
       .card__side {
         position: relative;
         height: 100%; } }
+    @media only screen and (max-width: 37.5em) {
+      .card__side {
+        transition: all 0.5s ease-in-out; } }
     @media only screen and (max-width: 75em) {
       .card__side--front {
         position: absolute;
         top: 0;
         transform: rotateY(0); } }
+    @media only screen and (max-width: 75em) {
+      .card__side--back.card__side--me, .card__side--back.card__side--work, .card__side--back.card__side--education, .card__side--back.card__side--personal-projects, .card__side--back.card__side--free-time {
+        background-image: none;
+        box-shadow: none; } }
     .card__side--back {
       transform: rotateY(-180deg); }
       @media only screen and (max-width: 75em) {
@@ -718,28 +720,47 @@ a:active, a:focus, a:hover {
           position: absolute;
           top: 50vh;
           height: 50vh;
-          transform: rotateY(0);
-          background-image: none !important;
-          box-shadow: none !important; } }
+          transform: rotateY(0); } }
       @media only screen and (max-width: 37.5em) {
         .card__side--back {
-          top: 70vh;
-          height: 50vh; } }
+          position: absolute;
+          height: 100%;
+          top: 0; } }
     .card__side--me {
       box-shadow: 1rem 1rem 1rem rgba(67, 97, 134, 0.3);
       background-image: linear-gradient(175deg, transparent 30%, rgba(83, 116, 166, 0.1) 75%, rgba(83, 116, 166, 0.2)), linear-gradient(100deg, transparent 30%, rgba(83, 116, 166, 0.1) 70%, rgba(91, 129, 182, 0.2)); }
+    @media only screen and (max-width: 37.5em) {
+      .card__side--back.card__side--me {
+        box-shadow: 1rem 1rem 1rem rgba(67, 97, 134, 0.3);
+        background-image: linear-gradient(175deg, transparent 30%, rgba(83, 116, 166, 0.1) 75%, rgba(83, 116, 166, 0.2)), linear-gradient(100deg, transparent 30%, rgba(83, 116, 166, 0.1) 70%, rgba(91, 129, 182, 0.2)); } }
     .card__side--work {
       box-shadow: 1rem 1rem 1rem rgba(155, 190, 46, 0.3);
       background-image: linear-gradient(175deg, transparent 30%, rgba(135, 190, 52, 0.1) 75%, rgba(155, 190, 46, 0.2)), linear-gradient(100deg, transparent 30%, rgba(169, 190, 46, 0.1) 70%, rgba(155, 190, 46, 0.2)); }
+    @media only screen and (max-width: 37.5em) {
+      .card__side--back.card__side--work {
+        box-shadow: 1rem 1rem 1rem rgba(155, 190, 46, 0.3);
+        background-image: linear-gradient(175deg, transparent 30%, rgba(135, 190, 52, 0.1) 75%, rgba(155, 190, 46, 0.2)), linear-gradient(100deg, transparent 30%, rgba(169, 190, 46, 0.1) 70%, rgba(155, 190, 46, 0.2)); } }
     .card__side--education {
       box-shadow: 1rem 1rem 1rem rgba(249, 118, 94, 0.3);
       background-image: linear-gradient(175deg, transparent 30%, rgba(236, 73, 73, 0.1) 75%, rgba(236, 95, 103, 0.1)), linear-gradient(100deg, transparent 30%, rgba(236, 73, 73, 0.1) 70%, rgba(236, 95, 103, 0.1)); }
+    @media only screen and (max-width: 37.5em) {
+      .card__side--back.card__side--education {
+        box-shadow: 1rem 1rem 1rem rgba(249, 118, 94, 0.3);
+        background-image: linear-gradient(175deg, transparent 30%, rgba(236, 73, 73, 0.1) 75%, rgba(236, 95, 103, 0.1)), linear-gradient(100deg, transparent 30%, rgba(236, 73, 73, 0.1) 70%, rgba(236, 95, 103, 0.1)); } }
     .card__side--personal-projects {
       box-shadow: 1rem 1rem 2rem rgba(85, 0, 167, 0.3);
       background-image: linear-gradient(175deg, transparent 30%, rgba(85, 0, 167, 0.1) 75%, rgba(77, 0, 154, 0.2)), linear-gradient(100deg, transparent 30%, rgba(71, 0, 142, 0.1) 70%, rgba(77, 0, 154, 0.2)); }
+    @media only screen and (max-width: 37.5em) {
+      .card__side--back.card__side--personal-projects {
+        box-shadow: 1rem 1rem 2rem rgba(85, 0, 167, 0.3);
+        background-image: linear-gradient(175deg, transparent 30%, rgba(85, 0, 167, 0.1) 75%, rgba(77, 0, 154, 0.2)), linear-gradient(100deg, transparent 30%, rgba(71, 0, 142, 0.1) 70%, rgba(77, 0, 154, 0.2)); } }
     .card__side--free-time {
       box-shadow: 1rem 1rem 1rem rgba(244, 172, 0, 0.3);
       background-image: linear-gradient(175deg, transparent 30%, rgba(250, 200, 99, 0.1) 75%, rgba(244, 185, 42, 0.2)), linear-gradient(100deg, transparent 30%, rgba(250, 200, 99, 0.1) 70%, rgba(244, 185, 42, 0.2)); }
+    @media only screen and (max-width: 37.5em) {
+      .card__side--back.card__side--free-time {
+        box-shadow: 1rem 1rem 1rem rgba(244, 172, 0, 0.3);
+        background-image: linear-gradient(175deg, transparent 30%, rgba(250, 200, 99, 0.1) 75%, rgba(244, 185, 42, 0.2)), linear-gradient(100deg, transparent 30%, rgba(250, 200, 99, 0.1) 70%, rgba(244, 185, 42, 0.2)); } }
   .card__content {
     position: absolute;
     top: 0;
@@ -758,6 +779,9 @@ a:active, a:focus, a:hover {
     flex-direction: column;
     grid-template-columns: repeat(2, 1fr);
     transform: translateZ(150px); }
+    @media only screen and (max-width: 37.5em) {
+      .card__header {
+        min-height: 10%; } }
   .card__icon {
     margin-top: 2rem;
     margin-left: 2rem;

@@ -22,12 +22,6 @@
     margin: 0;
   }
 
-  @include respond(phone) {
-    display: block;
-    height: auto;
-    width: 100%;
-  }
-
   :not(&:target) {
     display: none;
   }
@@ -36,22 +30,3 @@
 #st0:hover .st0 {
     animation: 1s animateOpacity forwards 1 ease-out;
 }
-
-//.copyright {
-//  font-size: 1rem;
-//  position: fixed;
-//  bottom: 2.5rem;
-//  right: 2rem;
-//  z-index: 100;
-//  display: flex;
-//  align-items: center;
-//  padding: 1rem;
-//
-//  @include respond(tab-port) {
-//    bottom: 1rem;
-//  }
-//
-//  img {
-//    width: 3rem;
-//  }
-//}
