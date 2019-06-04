@@ -748,7 +748,19 @@
 </div>
 
 <script type="text/javascript">
+
+    const changeBrowserColor = function (color) {
+        const oldMeta = document.getElementsByName('theme-color')[0];
+        document.getElementsByTagName('head')[0].removeChild(oldMeta);
+
+        const newMeta = document.createElement('meta');
+        newMeta.name = "theme-color";
+        newMeta.content = color;
+        document.getElementsByTagName('head')[0].appendChild(newMeta);
+    };
+
     const onPageScroll = function () {
+        let colors = ['#436186','#418910','#ec4949','#47008e', '#f4ac00'];
         let touchLastX;
         let touchStartX;
         let fronts = document.getElementsByClassName('card__side--front');
@@ -825,7 +837,7 @@
                     nowPageNr = nextPageNr;
                 }
             }
-
+            changeBrowserColor(colors[nowPageNr]);
         }
 
     };
@@ -903,24 +915,9 @@
         return color;
     };
 
-    const changeBrowserColor = function () {
-        const oldMeta = document.getElementsByName('theme-color')[0];
-        document.getElementsByTagName('head')[0].removeChild(oldMeta);
-
-        const newMeta = document.createElement('meta');
-        newMeta.name = "theme-color";
-        newMeta.content = getRandomColor();
-        document.getElementsByTagName('head')[0].appendChild(newMeta);
-    };
-
-    const timeoutChangeBrowserColor = function () {
-        setInterval(changeBrowserColor, 1000);
-    };
-
     const initMyJira = function () {
         fetchMyJiraStatus('http://my-jira.knieszner.pl/health/running', 10000, 10);
         changeLang("PL");
-        timeoutChangeBrowserColor();
     };
 
     initMyJira();
