@@ -179,7 +179,7 @@ const getRandomColor = function () {
 };
 
 const initMyJira = function () {
-    fetchMyJiraStatus('http://my-jira.knieszner.pl/health/running', 10000, 10);
+    fetchMyJiraStatus('https://my-jira.herokuapp.com/health/running', 10000, 10);
     changeLang("PL");
 };
 
