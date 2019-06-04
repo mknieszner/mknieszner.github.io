@@ -632,18 +632,20 @@
                         facere fugiat quae quasi veniam vero. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                         Accusantium beatae dicta expedita libero maiores nam nobis recusandae similique vero vitae.
                         Architecto assumenda aut distinctio facere fugiat quae quasi veniam vero.
-                        <div class="spinner" id="my-jira-link-not-ready">
-                            <div class="spinner__before-text">
-                                <span>Wait for initialization:</span>
+                        <div id="my-jira-link-container">
+                            <div class="spinner" id="my-jira-link-not-ready">
+                                <div class="spinner__before-text">
+                                    <span>Wait for initialization:</span>
+                                </div>
+                                <div class="spinner__animation">
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
                             </div>
-                            <div class="spinner__animation">
-                                <div></div>
-                                <div></div>
-                                <div></div>
+                            <div id="my-jira-link-ready">
+                                <a onclick="openMyJiraInNewWindow();">Go to My-Jira</a>
                             </div>
-                        </div>
-                        <div id="my-jira-link-ready">
-                            <a onclick="openMyJiraInNewWindow();">Go to My-Jira</a>
                         </div>
                     </div>
                     <div class="card__footer">
@@ -760,7 +762,7 @@
     };
 
     const onPageScroll = function () {
-        let colors = ['#436186','#418910','#651d32','#500778', '#d4af37'];
+        let colors = ['#436186', '#418910', '#651d32', '#500778', '#d4af37'];
         let touchLastX;
         let touchStartX;
         let fronts = document.getElementsByClassName('card__side--front');
@@ -782,7 +784,7 @@
         let nowIsFront = true;
         let nextPageNr;
         let nextIsFront;
-        const bodyEl = document.querySelector('body');
+        const bodyEl = document.querySelector('main');
         bodyEl.ontouchmove = (event) => {
             touchLastX = event.touches[0].screenX;
         };
@@ -792,6 +794,7 @@
         };
 
         bodyEl.ontouchend = () => {
+            console.log('ruch');
             let rotateDirection = (touchStartX - touchLastX) > 0;
             if (rotateDirection) {
                 nextPageNr = nowIsFront ? nowPageNr : nowPageNr + 1;

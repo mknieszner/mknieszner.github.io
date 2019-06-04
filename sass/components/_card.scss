@@ -303,6 +303,11 @@
 
 }
 
+#my-jira-link-container {
+  @include respond(phone) {
+    display: none;
+  }
+}
 #my-jira-link-ready {
   display: none;
 }
