@@ -28,6 +28,7 @@ ORDER:
   box-sizing: inherit; }
 
 html {
+  background-color: black;
   font-size: 62.5%; }
   @media only screen and (min-width: 112.5em) {
     html {
@@ -220,6 +221,7 @@ body {
   box-sizing: inherit; }
 
 html {
+  background-color: black;
   font-size: 62.5%; }
   @media only screen and (min-width: 112.5em) {
     html {
