@@ -12,6 +12,7 @@
     <title>My playground</title>
 </head>
 <body>
+<script>document.querySelector('body').style.visibility = "hidden";</script>
 <div class="language-navigation">
     <div class="btn btn--white btn--lang btn--lang-pl" onclick="changeLang('PL')">
         PL
@@ -751,5 +752,6 @@
 
 <script src="/sw.js"></script>
 <script src="/js/utilities.js" type="text/javascript"></script>
+<script>setTimeout(() => document.querySelector('body').style.visibility = "visible", 300)</script>
 </body>
 </html>
