@@ -1,5 +1,6 @@
 var CACHE_STATIC_NAME = 'static-v01';
 var STATIC_FILES = [
+    '/',
     '/index.html',
     '/img/favicon/favicon.ico',
     '/img/icons/Icon-144.png',
