@@ -1,11 +1,14 @@
 var CACHE_STATIC_NAME = 'static-v01';
 var STATIC_FILES = [
+    '/',
     '/index.html',
+    '/manifest.json',
+    '/js/utilities.js',
     '/img/favicon/favicon.ico',
+    '/css/style.css',
     '/img/icons/Icon-144.png',
     '/img/icons/Icon-512.png',
     '/img/svg/me.svg',
-    '/img/svg/me.svg#me-icon',
     '/img/svg/education.svg',
     '/img/svg/personal-projects.svg',
     '/img/svg/work.svg',
@@ -13,10 +16,7 @@ var STATIC_FILES = [
     '/img/card-back.png',
     '/img/main-back.png',
     '/img/no-javascript.svg',
-    '/css/style.css',
-    '/js/utilities.js',
-    '/manifest.json',
-    '/sw.js'
+    'https://fonts.googleapis.com/css?family=Raleway:100,300,400,700,900&subset=latin-ext'
 ];
 
 self.addEventListener('install', function (event) {
@@ -25,8 +25,7 @@ self.addEventListener('install', function (event) {
         caches.open(CACHE_STATIC_NAME)
             .then(function (cache) {
                 console.log('[Service Worker] Precaching App Shell');
-                cache.addAll(STATIC_FILES);
-                cache.keys().then((s) => console.log(s));
+                return cache.addAll(STATIC_FILES);
             })
     );
 });
@@ -34,9 +33,10 @@ self.addEventListener('install', function (event) {
 function isInArray(string, array) {
     var cachePath;
     if (string.indexOf(self.origin) === 0) { // request targets domain where we serve the page from (i.e. NOT a CDN)
-        // console.log('matched ', string);
         cachePath = string.substring(self.origin.length); // take the part of the URL AFTER the domain (e.g. after localhost:8080)
-        console.log('cachePath', cachePath)
+        cachePath = cachePath.indexOf('#') > -1
+            ? cachePath.substring(0, cachePath.indexOf('#'))
+            : cachePath;  // removes #... from svg href elements
     } else {
         cachePath = string; // store the full request (for CDNs)
     }
