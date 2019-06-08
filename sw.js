@@ -1,6 +1,5 @@
 var CACHE_STATIC_NAME = 'static-v01';
 var STATIC_FILES = [
-    '/',
     '/index.html',
     '/img/favicon/favicon.ico',
     '/img/icons/Icon-144.png',
@@ -15,9 +14,9 @@ var STATIC_FILES = [
     '/img/main-back.png',
     '/img/no-javascript.svg',
     '/css/style.css',
-    '/sw.js',
     '/js/utilities.js',
-    '/manifest.json'
+    '/manifest.json',
+    '/sw.js'
 ];
 
 self.addEventListener('install', function (event) {
@@ -27,8 +26,9 @@ self.addEventListener('install', function (event) {
             .then(function (cache) {
                 console.log('[Service Worker] Precaching App Shell');
                 cache.addAll(STATIC_FILES);
+                cache.keys().then((s) => console.log(s));
             })
-    )
+    );
 });
 
 function isInArray(string, array) {
@@ -36,7 +36,7 @@ function isInArray(string, array) {
     if (string.indexOf(self.origin) === 0) { // request targets domain where we serve the page from (i.e. NOT a CDN)
         // console.log('matched ', string);
         cachePath = string.substring(self.origin.length); // take the part of the URL AFTER the domain (e.g. after localhost:8080)
-        console.log('cachePath',cachePath)
+        console.log('cachePath', cachePath)
     } else {
         cachePath = string; // store the full request (for CDNs)
     }
@@ -50,11 +50,14 @@ self.addEventListener('activate', function (event) {
 });
 
 self.addEventListener('fetch', function (event) {
-    if(isInArray(event.request.url, STATIC_FILES)) {
-        event.respondWith(
-            caches.match(event.request)
-        );
-    } else {
-        event.respondWith(fetch(event.request));
-    }
+    event.respondWith(
+        caches.match(event.request)
+            .then((response) => {
+                if (isInArray(event.request.url, STATIC_FILES)) {
+                    return response;
+                } else {
+                    return fetch(event.request)
+                }
+            })
+    );
 });
