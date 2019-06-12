@@ -1,4 +1,4 @@
-var CACHE_STATIC_NAME = 'static-v01';
+var CACHE_STATIC_NAME = 'static-v02';
 var STATIC_FILES = [
     '/',
     '/index.html',
