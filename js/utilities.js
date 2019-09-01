@@ -29,24 +29,32 @@ const changeBrowserColor = function (color) {
     document.getElementsByTagName('head')[0].appendChild(newMeta);
 };
 
+const rotateYElem = function(element, transformString) {
+    const rotateYString = 'rotateY(' + transformString + ')';
+
+    element.style.webkitTransform = rotateYString;
+    element.style.MozTransform = rotateYString;
+    element.style.msTransform = rotateYString;
+    element.style.OTransform = rotateYString;
+    element.style.transform = rotateYString;
+};
+
+const displayElem = function(element, transformString) {
+    const rotateYString = 'display: ' + transformString ;
+    element.style.transform = rotateYString;
+    element.style.webkitTransform = rotateYString;
+    element.style.MozTransform = rotateYString;
+    element.style.msTransform = rotateYString;
+    element.style.OTransform = rotateYString;
+    element.style.transform = rotateYString;
+};
+
 const onPageScroll = function () {
     let colors = ['#436186', '#418910', '#651d32', '#500778', '#d4af37'];
     let touchLastX;
     let touchStartX;
     let fronts = document.getElementsByClassName('card__side--front');
     let backs = document.getElementsByClassName('card__side--back');
-
-    if (window.matchMedia("(max-width: 37.5em)").matches) {
-        for (let i = 0; i < fronts.length; i++) {
-            fronts[i].style.transform = "rotateY(180deg)";
-            backs[i].style.transform = "rotateY(180deg)";
-        }
-        fronts[0].style.transform = "rotateY(0deg)";
-        backs[0].style.transform = "rotateY(180deg)";
-    }
-
-    changeBrowserColor(colors[0]);
-
 
     let nowPageNr = 0;
     let nowIsFront = true;
@@ -62,28 +70,25 @@ const onPageScroll = function () {
     };
 
     bodyEl.ontouchend = () => {
-        console.log('ruch');
-        let rotateDirection = (touchStartX - touchLastX) > 0;
-        if (rotateDirection) {
+        console.log('move');
+        let moveDown = (touchStartX - touchLastX) > 0;
+        if (moveDown) {
             nextPageNr = nowIsFront ? nowPageNr : nowPageNr + 1;
             nextIsFront = !nowIsFront;
             if (nextPageNr !== backs.length) {
                 nextPageNr = nowIsFront ? nowPageNr : nowPageNr + 1;
                 nextIsFront = !nowIsFront;
-                // console.log('ruch na dół');
-                // console.log('teraz jest');
+                // console.log('down move');
                 // console.log(nowIsFront);
                 // console.log(nowPageNr);
-                // console.log('teraz bedzie');
                 // console.log(nextIsFront);
                 // console.log(nextPageNr);
-
                 if (nowIsFront) {
-                    fronts[nowPageNr].style.transform = "rotateY(-180deg)";
-                    backs[nowPageNr].style.transform = "rotateY(0deg)";
+                    rotateYElem(fronts[nowPageNr], "-180deg");
+                    rotateYElem(backs[nowPageNr], "0deg");
                 } else {
-                    fronts[nextPageNr].style.transform = "rotateY(0deg)";
-                    backs[nowPageNr].style.transform = "rotateY(-180deg)";
+                    rotateYElem(fronts[nextPageNr], "0deg");
+                    rotateYElem(backs[nowPageNr],"-180deg");
                 }
                 nowIsFront = nextIsFront;
                 nowPageNr = nextPageNr;
@@ -91,20 +96,18 @@ const onPageScroll = function () {
         } else {
             nextPageNr = nowIsFront ? nowPageNr - 1 : nowPageNr;
             nextIsFront = !nowIsFront;
-            // console.log('ruch do góry');
-            // console.log('teraz jest');
+            // console.log('up move');
             // console.log(nowIsFront);
             // console.log(nowPageNr);
-            // console.log('teraz bedzie');
             // console.log(nextIsFront);
             // console.log(nextPageNr);
             if (nextPageNr !== -1) {
                 if (nowIsFront) {
-                    fronts[nowPageNr].style.transform = "rotateY(180deg)";
-                    backs[nextPageNr].style.transform = "rotateY(0deg)";
+                    rotateYElem(fronts[nowPageNr], "180deg");
+                    rotateYElem(backs[nextPageNr], "0deg");
                 } else {
-                    fronts[nextPageNr].style.transform = "rotateY(0deg)";
-                    backs[nowPageNr].style.transform = "rotateY(180deg)";
+                    rotateYElem(fronts[nextPageNr], "0deg");
+                    rotateYElem(backs[nowPageNr], "180deg");
                 }
                 nowIsFront = nextIsFront;
                 nowPageNr = nextPageNr;
@@ -178,15 +181,6 @@ function fetchMyJiraStatus(url, timeout, limit) {
             document.getElementById('my-jira-link-ready').style.display = 'none';
         })
 }
-
-const getRandomColor = function () {
-    const letters = '0123456789ABCDEF';
-    let color = '#';
-    for (let i = 0; i < 6; i++) {
-        color += letters[Math.floor(Math.random() * 16)];
-    }
-    return color;
-};
 
 const initMyJira = function () {
     fetchMyJiraStatus('https://my-jira.herokuapp.com/health/running', 10000, 10);

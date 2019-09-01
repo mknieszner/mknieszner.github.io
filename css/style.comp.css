@@ -711,6 +711,9 @@ a:active, a:focus, a:hover {
         position: absolute;
         top: 0;
         transform: rotateY(0); } }
+    @media only screen and (max-width: 37.5em) {
+      .card__side--front {
+        transform: rotateY(180deg); } }
     @media only screen and (max-width: 75em) {
       .card__side--back.card__side--me, .card__side--back.card__side--work, .card__side--back.card__side--education, .card__side--back.card__side--personal-projects, .card__side--back.card__side--free-time {
         background-image: none;
@@ -727,10 +730,14 @@ a:active, a:focus, a:hover {
         .card__side--back {
           position: absolute;
           height: 100%;
-          top: 0; } }
+          top: 0;
+          transform: rotateY(180deg); } }
     .card__side--me {
       box-shadow: 1rem 1rem 1rem rgba(67, 97, 134, 0.3);
       background-image: linear-gradient(175deg, transparent 30%, rgba(83, 116, 166, 0.1) 75%, rgba(83, 116, 166, 0.2)), linear-gradient(100deg, transparent 30%, rgba(83, 116, 166, 0.1) 70%, rgba(91, 129, 182, 0.2)); }
+    @media only screen and (max-width: 37.5em) {
+      .card__side--front.card__side--me {
+        transform: rotateY(0deg); } }
     @media only screen and (max-width: 37.5em) {
       .card__side--back.card__side--me {
         box-shadow: 1rem 1rem 1rem rgba(67, 97, 134, 0.3);

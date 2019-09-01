@@ -48,6 +48,9 @@
         top: 0;
         transform: rotateY(0);
       }
+      @include respond(phone) {
+        transform: rotateY(180deg);
+      }
     }
 
     &--back#{&}--me,
@@ -75,6 +78,7 @@
         position: absolute;
         height: 100%;
         top: 0;
+        transform: rotateY(180deg);
       }
     }
 
@@ -90,6 +94,13 @@
                       transparent 30%,
                       rgba($color-blue-1, .1) 70%,
                       rgba($color-blue-2, .2));
+    }
+
+    &--front#{&}--me {
+
+      @include respond(phone) {
+        transform: rotateY(0deg);
+      }
     }
 
     &--back#{&}--me {
