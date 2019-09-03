@@ -4,7 +4,6 @@
   border-radius: 25px;
   color: $color-grey-light-1;
   position: relative;
-  transform-style: preserve-3d;
 
   &:hover &__side--front {
     transform: rotateY(180deg);
@@ -30,6 +29,7 @@
     transition: all 1.5s ease-in-out;
     position: absolute;
     transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
     backface-visibility: hidden;
     border-radius: 10px;
 
@@ -80,6 +80,10 @@
         top: 0;
         transform: rotateY(180deg);
       }
+    }
+
+    @include respond(phone) {
+      transition: all 0.5s ease-in-out;
     }
 
     &--me {
@@ -253,8 +257,9 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
     backface-visibility: hidden;
-    transform: translateZ(100px);
   }
 
   &__header {
@@ -263,7 +268,10 @@
     display: flex;
     flex-direction: column;
     grid-template-columns: repeat(2, 1fr);
-    transform: translateZ(150px);
+    transform: translateZ(100px);
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
 
     @include respond(phone) {
       min-height: 10%;
@@ -295,6 +303,10 @@
     margin-bottom: auto;
     text-align: justify;
     color: $color-white;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
 
     @include respond(phone) {
       text-align: center;

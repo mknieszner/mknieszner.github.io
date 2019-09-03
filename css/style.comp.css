@@ -678,8 +678,7 @@ a:active, a:focus, a:hover {
   height: 90%;
   border-radius: 25px;
   color: #f7f7f7;
-  position: relative;
-  transform-style: preserve-3d; }
+  position: relative; }
   .card:hover .card__side--front {
     transform: rotateY(180deg); }
     @media only screen and (max-width: 75em) {
@@ -697,6 +696,7 @@ a:active, a:focus, a:hover {
     transition: all 1.5s ease-in-out;
     position: absolute;
     transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
     backface-visibility: hidden;
     border-radius: 10px; }
     @media only screen and (max-width: 75em) {
@@ -732,6 +732,9 @@ a:active, a:focus, a:hover {
           height: 100%;
           top: 0;
           transform: rotateY(180deg); } }
+    @media only screen and (max-width: 37.5em) {
+      .card__side {
+        transition: all 0.5s ease-in-out; } }
     .card__side--me {
       box-shadow: 1rem 1rem 1rem rgba(67, 97, 134, 0.3);
       background-image: linear-gradient(175deg, transparent 30%, rgba(83, 116, 166, 0.1) 75%, rgba(83, 116, 166, 0.2)), linear-gradient(100deg, transparent 30%, rgba(83, 116, 166, 0.1) 70%, rgba(91, 129, 182, 0.2)); }
@@ -779,15 +782,19 @@ a:active, a:focus, a:hover {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    backface-visibility: hidden;
-    transform: translateZ(100px); }
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    backface-visibility: hidden; }
   .card__header {
     max-width: 100%;
     margin: 2rem;
     display: flex;
     flex-direction: column;
     grid-template-columns: repeat(2, 1fr);
-    transform: translateZ(150px); }
+    transform: translateZ(100px);
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d; }
     @media only screen and (max-width: 37.5em) {
       .card__header {
         min-height: 10%; } }
@@ -811,7 +818,11 @@ a:active, a:focus, a:hover {
     margin: 2rem;
     margin-bottom: auto;
     text-align: justify;
-    color: #fff; }
+    color: #fff;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d; }
     @media only screen and (max-width: 37.5em) {
       .card__main {
         text-align: center;

@@ -29,8 +29,8 @@ const changeBrowserColor = function (color) {
     document.getElementsByTagName('head')[0].appendChild(newMeta);
 };
 
-const rotateYElem = function(element, transformString) {
-    const rotateYString = 'rotateY(' + transformString + ')';
+const rotateYElem = function (element, transformString) {
+    let rotateYString = 'rotateY(' + transformString + ')';
 
     element.style.webkitTransform = rotateYString;
     element.style.MozTransform = rotateYString;
@@ -39,14 +39,8 @@ const rotateYElem = function(element, transformString) {
     element.style.transform = rotateYString;
 };
 
-const displayElem = function(element, transformString) {
-    const rotateYString = 'display: ' + transformString ;
-    element.style.transform = rotateYString;
-    element.style.webkitTransform = rotateYString;
-    element.style.MozTransform = rotateYString;
-    element.style.msTransform = rotateYString;
-    element.style.OTransform = rotateYString;
-    element.style.transform = rotateYString;
+const displayElem = function (element, transformString) {
+    element.style.display = transformString;
 };
 
 const onPageScroll = function () {
@@ -170,15 +164,15 @@ function fetchMyJiraStatus(url, timeout, limit) {
         })
         .then(function (running) {
             if (running) {
-                document.getElementById('my-jira-link-not-ready').style.display = 'none';
-                document.getElementById('my-jira-link-ready').style.display = 'block';
+                displayElem(document.getElementById('my-jira-link-not-ready'), 'none');
+                displayElem(document.getElementById('my-jira-link-ready'), 'block');
             } else {
                 throw Error('Api exception');
             }
         })
         .catch(function () {
-            document.getElementById('my-jira-link-not-ready').style.display = 'flex';
-            document.getElementById('my-jira-link-ready').style.display = 'none';
+            displayElem(document.getElementById('my-jira-link-not-ready'), 'flex');
+            displayElem(document.getElementById('my-jira-link-ready'), 'none');
         })
 }
 
