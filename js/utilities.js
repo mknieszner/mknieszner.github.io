@@ -59,19 +59,16 @@ const onPageScroll = function () {
     const bodyEl = document.querySelector('main');
 
     bodyEl.ontouchstart = (event) => {
-        touchStartX = event.touches[0].screenX;
-        touchStartY = event.touches[0].screenY;
+        event.preventDefault()
+        touchStartX = event.touches[0].pageX;
+        touchStartY = event.touches[0].pageY;
     };
 
-    bodyEl.ontouchmove = (event) => {
-        touchLastX = event.touches[0].screenX;
-        touchLastY = event.touches[0].screenY;
-    };
+    bodyEl.ontouchend = (event) => {
+        touchLastX = event.changedTouches[0].pageX;
+        touchLastY = event.changedTouches[0].pageY;
 
-
-
-    bodyEl.ontouchend = () => {
-        if(Math.abs(touchStartX - touchLastX) <= Math.abs(touchStartY - touchLastY)) {
+        if (!touchStartX || !touchLastX || !touchStartY || !touchLastY || Math.abs(touchStartX - touchLastX) <= Math.abs(touchStartY - touchLastY)) {
             displayScrollHint();
             return
         }
@@ -95,7 +92,7 @@ const onPageScroll = function () {
                     rotateYElem(backs[nowPageNr], "0deg");
                 } else {
                     rotateYElem(fronts[nextPageNr], "0deg");
-                    rotateYElem(backs[nowPageNr],"-180deg");
+                    rotateYElem(backs[nowPageNr], "-180deg");
                 }
                 nowIsFront = nextIsFront;
                 nowPageNr = nextPageNr;
@@ -146,9 +143,15 @@ const findAllByClassNameAndChangeVisibility = function (className, displayIfCont
 };
 
 const displayScrollHint = function () {
-    const langButtonClass = "scroll-right";
-    findAllByClassNameAndChangeVisibility(langButtonClass, "none", "block", []);
-    setTimeout(findAllByClassNameAndChangeVisibility, 1500, langButtonClass, "block", "none", []);
+    const scrollClass = "scroll-right";
+    const scrollElem = document.getElementsByClassName(scrollClass)[0];
+    if (scrollElem.classList.contains('animated')) {
+        return
+    }
+    scrollElem.classList.add('animated');
+    setTimeout(function () {
+        scrollElem.classList.remove('animated')
+    }, 1500);
 };
 
 const hideAllNonSelectedLanguageTexts = function (lang) {
@@ -177,7 +180,7 @@ function fetchMyJiraStatus(url, timeout, limit) {
     fetch(url)
         .then(function (response) {
             if (response.status !== 200 && limit) {
-                setTimeout(fetchMyJiraStatus(url, timeout, --limit), timeout);
+                setTimeout(fetchMyJiraStatus, timeout, url, timeout, --limit);
             }
             return response.json()
         })

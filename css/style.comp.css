@@ -941,12 +941,14 @@ a:active, a:focus, a:hover {
   width: 50px;
   height: 30px;
   margin-left: -20px;
-  bottom: 5%;
+  bottom: 7%;
   margin-top: -35px;
   border: 1px #fff solid;
   border-radius: 25px;
-  display: none;
-  animation: animateOpacity 1.5s infinite; }
+  opacity: 0; }
+
+.scroll-right.animated {
+  animation: animateOpacity 1.5s; }
 
 .scroll-right:before {
   content: '';
@@ -956,4 +958,7 @@ a:active, a:focus, a:hover {
   margin-left: -4px;
   top: 12px;
   border-radius: 2px;
-  animation: scrollRight 1.5s infinite; }
+  opacity: 0; }
+
+.scroll-right.animated:before {
+  animation: scrollRight 1.5s; }
