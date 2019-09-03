@@ -504,6 +504,7 @@ body {
 
 .language-navigation {
   position: absolute;
+  top: unset;
   bottom: 30px;
   right: 50px;
   display: flex; }
@@ -512,7 +513,8 @@ body {
       z-index: 1;
       position: absolute;
       right: 20px;
-      bottom: 20px;
+      top: 20px;
+      bottom: unset;
       display: flex; } }
 
 .main-image {
@@ -692,6 +694,11 @@ a:active, a:focus, a:hover {
     @media only screen and (max-width: 75em) {
       .card:hover .card__side--front {
         transform: rotateY(0); } }
+  .card:hover .card__icon {
+    transform: translateX(-50%) rotateY(360deg);
+    margin: 2rem 50%; }
+  .card:hover .card__header-text {
+    opacity: 0; }
   .card:hover .card__side--back {
     transform: rotateY(0deg); }
   @media only screen and (max-width: 37.5em) {
@@ -705,7 +712,6 @@ a:active, a:focus, a:hover {
     position: absolute;
     transform-style: preserve-3d;
     -webkit-transform-style: preserve-3d;
-    backface-visibility: hidden;
     border-radius: 10px; }
     @media only screen and (max-width: 75em) {
       .card__side {
@@ -713,7 +719,8 @@ a:active, a:focus, a:hover {
         height: 100%; } }
     @media only screen and (max-width: 37.5em) {
       .card__side {
-        transition: all 0.5s ease-in-out; } }
+        transition: all 0.5s ease-in-out;
+        backface-visibility: hidden; } }
     @media only screen and (max-width: 75em) {
       .card__side--front {
         position: absolute;
@@ -792,27 +799,27 @@ a:active, a:focus, a:hover {
     justify-content: space-between;
     transform-style: preserve-3d;
     -webkit-transform-style: preserve-3d;
-    backface-visibility: hidden; }
+    backface-visibility: visible; }
   .card__header {
     max-width: 100%;
+    min-height: 10%;
     margin: 2rem;
     display: flex;
     flex-direction: column;
     grid-template-columns: repeat(2, 1fr);
-    transform: translateZ(100px);
-    backface-visibility: hidden;
     transform-style: preserve-3d;
     -webkit-transform-style: preserve-3d; }
     @media only screen and (max-width: 37.5em) {
       .card__header {
-        min-height: 10%; } }
+        backface-visibility: hidden; } }
   .card__icon {
     margin-top: 2rem;
     margin-left: 2rem;
     width: 8rem;
     height: 8rem;
     min-width: 3rem;
-    fill: #fff; }
+    fill: #fff;
+    transition: all 1.5s ease-in-out; }
     @media only screen and (max-width: 37.5em) {
       .card__icon {
         min-width: 10rem;
@@ -821,7 +828,14 @@ a:active, a:focus, a:hover {
     text-align: right;
     font-size: 4rem;
     font-weight: 100;
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    transform: translateZ(100px);
+    transition: all 1.5s ease-in-out;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden; }
+    @media only screen and (max-width: 37.5em) {
+      .card__header-text {
+        transform: translateZ(50px); } }
   .card__main {
     margin: 2rem;
     margin-bottom: auto;
@@ -838,7 +852,11 @@ a:active, a:focus, a:hover {
   .card__footer {
     display: flex;
     justify-content: end;
-    margin: 3rem; }
+    margin: 3rem;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d; }
   .card__link {
     color: #f7f7f7; }
 
@@ -941,7 +959,7 @@ a:active, a:focus, a:hover {
   width: 50px;
   height: 30px;
   margin-left: -20px;
-  bottom: 7%;
+  bottom: 8%;
   margin-top: -35px;
   border: 1px #fff solid;
   border-radius: 25px;

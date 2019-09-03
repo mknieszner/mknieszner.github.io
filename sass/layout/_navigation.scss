@@ -304,6 +304,7 @@
 
 .language-navigation {
   position: absolute;
+  top: unset;
   bottom: 30px;
   right: 50px;
   display: flex;
@@ -312,7 +313,8 @@
     z-index: 1;
     position: absolute;
     right: 20px;
-    bottom: 20px;
+    top: 20px;
+    bottom: unset;
     display: flex;
   }
 }
