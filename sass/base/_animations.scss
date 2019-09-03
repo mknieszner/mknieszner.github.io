@@ -241,3 +241,8 @@
     height: 26px;
   }
 }
+
+@keyframes scrollRight {
+  0% { opacity: 1; transform: translateX(-10px) }
+  100% { opacity: 0; transform: translateX(10px) }
+}

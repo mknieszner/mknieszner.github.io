@@ -47,6 +47,8 @@ const onPageScroll = function () {
     let colors = ['#436186', '#418910', '#651d32', '#500778', '#d4af37'];
     let touchLastX;
     let touchStartX;
+    let touchStartY;
+    let touchLastY;
     let fronts = document.getElementsByClassName('card__side--front');
     let backs = document.getElementsByClassName('card__side--back');
 
@@ -55,16 +57,27 @@ const onPageScroll = function () {
     let nextPageNr;
     let nextIsFront;
     const bodyEl = document.querySelector('main');
-    bodyEl.ontouchmove = (event) => {
-        touchLastX = event.touches[0].screenX;
-    };
 
     bodyEl.ontouchstart = (event) => {
         touchStartX = event.touches[0].screenX;
+        touchStartY = event.touches[0].screenY;
     };
 
+    bodyEl.ontouchmove = (event) => {
+        touchLastX = event.touches[0].screenX;
+        touchLastY = event.touches[0].screenY;
+    };
+
+
+
     bodyEl.ontouchend = () => {
-        console.log('move');
+        if(Math.abs(touchStartX - touchLastX) <= Math.abs(touchStartY - touchLastY)) {
+            displayScrollHint();
+            return
+        }
+
+
+        // console.log('move');
         let moveDown = (touchStartX - touchLastX) > 0;
         if (moveDown) {
             nextPageNr = nowIsFront ? nowPageNr : nowPageNr + 1;
@@ -130,6 +143,12 @@ const findAllByClassNameAndChangeVisibility = function (className, displayIfCont
             all[i].style.display = displayIfNotContains;
         }
     }
+};
+
+const displayScrollHint = function () {
+    const langButtonClass = "scroll-right";
+    findAllByClassNameAndChangeVisibility(langButtonClass, "none", "block", []);
+    setTimeout(findAllByClassNameAndChangeVisibility, 1500, langButtonClass, "block", "none", []);
 };
 
 const hideAllNonSelectedLanguageTexts = function (lang) {
