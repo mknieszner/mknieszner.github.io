@@ -16,10 +16,19 @@
   &:hover &__icon {
     transform: translateX(-50%) rotateY(360deg);
     margin: 2rem 50%;
+
+    @include respond(tab-land) {
+      transform: none;
+      margin: 2rem;
+    }
   }
 
   &:hover &__header-text {
     opacity: 0;
+
+    @include respond(tab-land) {
+      opacity: 1;
+    }
   }
 
   &:hover &__side--back {

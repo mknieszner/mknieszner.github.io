@@ -697,8 +697,15 @@ a:active, a:focus, a:hover {
   .card:hover .card__icon {
     transform: translateX(-50%) rotateY(360deg);
     margin: 2rem 50%; }
+    @media only screen and (max-width: 75em) {
+      .card:hover .card__icon {
+        transform: none;
+        margin: 2rem; } }
   .card:hover .card__header-text {
     opacity: 0; }
+    @media only screen and (max-width: 75em) {
+      .card:hover .card__header-text {
+        opacity: 1; } }
   .card:hover .card__side--back {
     transform: rotateY(0deg); }
   @media only screen and (max-width: 37.5em) {
