@@ -285,7 +285,7 @@ body {
 
 .main-container {
   background-image: linear-gradient(0.3turn, rgba(27, 43, 52, 0.2), rgba(54, 56, 63, 0.01), rgba(13, 17, 26, 0.2)), url("/img/card-black.webp");
-  height: 100vh;
+  height: 99vh;
   display: grid;
   grid-template-columns: min-content minmax(45vw, 1fr);
   grid-template-rows: auto;
