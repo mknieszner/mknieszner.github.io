@@ -290,15 +290,6 @@ body {
   grid-template-columns: min-content minmax(45vw, 1fr);
   grid-template-rows: auto;
   justify-items: center; }
-  @media only screen and (max-width: 75em) {
-    .main-container {
-      grid-template-columns: 80vw 1fr;
-      grid-template-rows: 1fr; } }
-  @media only screen and (max-width: 56.25em) {
-    .main-container {
-      grid-template-columns: min-content minmax(45vw, 1fr);
-      height: 100vh;
-      margin: 0; } }
 
 #st0:hover .st0 {
   animation: 1s animateOpacity forwards 1 ease-out; }
