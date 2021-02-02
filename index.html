@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="Description" content="My portfolio.">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#436186">
-    <link rel="manifest" href="/manifest.json">
-    <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,700,900&amp;subset=latin-ext"
-          rel="stylesheet">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,700,900&amp;subset=latin-ext&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="shortcut icon" type="image/png" href="img/favicon/favicon.ico">
     <title>My playground</title>
@@ -435,17 +436,20 @@
                     <use href="img/svg/work.svg#work-icon"></use>
                 </svg>
             </a>
-            <a href="#personal-projects" class="tablet-navigation__link tablet-navigation__link--personal-projects" aria-label="Personal Projects">
+            <a href="#personal-projects" class="tablet-navigation__link tablet-navigation__link--personal-projects"
+               aria-label="Personal Projects">
                 <svg id="#nav-icon-personal-projects" class="nav-icon nav-icon--personal-projects">
                     <use href="img/svg/personal-projects.svg#personal-projects-icon"></use>
                 </svg>
             </a>
-            <a href="#education" class="tablet-navigation__link tablet-navigation__link--education" aria-label="Education">
+            <a href="#education" class="tablet-navigation__link tablet-navigation__link--education"
+               aria-label="Education">
                 <svg id="#nav-icon-education" class="nav-icon nav-icon--education">
                     <use href="img/svg/education.svg#education-icon"></use>
                 </svg>
             </a>
-            <a href="#free-time" class="tablet-navigation__link tablet-navigation__link--free-time" aria-label="Free Time">
+            <a href="#free-time" class="tablet-navigation__link tablet-navigation__link--free-time"
+               aria-label="Free Time">
                 <svg id="#nav-icon-free-time" class="nav-icon nav-icon--free-time">
                     <use href="img/svg/free-time.svg#free-time-icon"></use>
                 </svg>
@@ -504,6 +508,68 @@
                         facere fugiat quae quasi veniam vero. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                         Accusantium beatae dicta expedita libero maiores nam nobis recusandae similique vero vitae.
                         Architecto assumenda aut distinctio facere fugiat quae quasi veniam vero.
+                    </div>
+                    <div class="card__footer">
+                        <a class="btn btn--transparent" href="#">X</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="personal-projects" class="card-container">
+        <div class="card">
+            <div class="card__side card__side--front card__side--personal-projects">
+                <div class="card__content">
+                    <div class="card__header">
+                        <svg class="card__icon">
+                            <use href="img/svg/personal-projects.svg#personal-projects-icon"></use>
+                        </svg>
+                        <div class="card__header-text">
+                            Personal Projects
+                        </div>
+                    </div>
+                    <div class="card__main">
+                        PP Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium beatae dicta expedita
+                        libero maiores nam nobis recusandae similique vero vitae. Architecto assumenda aut distinctio
+                        facere fugiat quae quasi veniam vero. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Accusantium beatae dicta expedita libero maiores nam nobis recusandae similique vero vitae.
+                        Architecto assumenda aut distinctio facere fugiat quae quasi veniam vero.
+                    </div>
+                    <div class="card__footer">
+                    </div>
+                </div>
+            </div>
+            <div class="card__side card__side--back card__side--personal-projects">
+                <div class="card__content">
+                    <div class="card__header">
+                        <div class="card__header-text">
+                        </div>
+                    </div>
+                    <div class="card__main">
+                        <div id="projects-link-container">
+                            <div>
+                                <a onclick="openInNewWindow('http://my-jira.knieszner.pl');">My-Jira (ANGULAR JAVA +
+                                    SPRING)</a>
+                            </div>
+                            <div>
+                                <a onclick="openInNewWindow('http://burger.knieszner.pl');">Burger Builder
+                                    (REACT + FIREBASE)</a>
+                            </div>
+                            <div>
+                                <a onclick="openInNewWindow('https://my-dog.knieszner.pl');">Gustaw (ANGULAR
+                                    PWA)</a>
+                            </div>
+                            <div>
+                                <a onclick="openInNewWindow('https://pdf-viewer.knieszner.pl/');">Remote PDF-VIEWER
+                                    (ANGULAR + JAVA)</a>
+                            </div>
+                            <div>
+                                <a onclick="openInNewWindow('https://nature.knieszner.pl/');">Natours (SASS)</a>
+                            </div>
+                            <div>
+                                <a onclick="openInNewWindow('https://house.knieszner.pl/');">Nexter (SASS)</a>
+                            </div>
+                        </div>
                     </div>
                     <div class="card__footer">
                         <a class="btn btn--transparent" href="#">X</a>
@@ -598,66 +664,8 @@
             </div>
         </div>
     </div>
-    <div id="personal-projects" class="card-container">
-        <div class="card">
-            <div class="card__side card__side--front card__side--personal-projects">
-                <div class="card__content">
-                    <div class="card__header">
-                        <svg class="card__icon">
-                            <use href="img/svg/personal-projects.svg#personal-projects-icon"></use>
-                        </svg>
-                        <div class="card__header-text">
-                            Personal Projects
-                        </div>
-                    </div>
-                    <div class="card__main">
-                        PP Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium beatae dicta expedita
-                        libero maiores nam nobis recusandae similique vero vitae. Architecto assumenda aut distinctio
-                        facere fugiat quae quasi veniam vero. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        Accusantium beatae dicta expedita libero maiores nam nobis recusandae similique vero vitae.
-                        Architecto assumenda aut distinctio facere fugiat quae quasi veniam vero.
-                    </div>
-                    <div class="card__footer">
-                    </div>
-                </div>
-            </div>
-            <div class="card__side card__side--back card__side--personal-projects">
-                <div class="card__content">
-                    <div class="card__header">
-                        <div class="card__header-text">
-                        </div>
-                    </div>
-                    <div class="card__main">
-                        PP Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium beatae dicta expedita
-                        libero maiores nam nobis recusandae similique vero vitae. Architecto assumenda aut distinctio
-                        facere fugiat quae quasi veniam vero. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        Accusantium beatae dicta expedita libero maiores nam nobis recusandae similique vero vitae.
-                        Architecto assumenda aut distinctio facere fugiat quae quasi veniam vero.
-                        <div id="my-jira-link-container">
-                            <div class="spinner" id="my-jira-link-not-ready">
-                                <div class="spinner__before-text">
-                                    <span>Wait for initialization:</span>
-                                </div>
-                                <div class="spinner__animation">
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                </div>
-                            </div>
-                            <div id="my-jira-link-ready">
-                                <a onclick="openMyJiraInNewWindow();">Go to My-Jira</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card__footer">
-                        <a class="btn btn--transparent" href="#">X</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     <div id="free-time" class="card-container">
-        <div class="card ">
+        <div class="card">
             <div class="card__side card__side--front card__side--free-time">
                 <div class="card__content">
                     <div class="card__header">
@@ -699,6 +707,7 @@
             </div>
         </div>
     </div>
+
 </main>
 <div class="scroll-right"></div>
 <div class="navigation">
@@ -750,7 +759,6 @@
         </ul>
     </nav>
 </div>
-
 <script src="/js/utilities.js" type="text/javascript"></script>
 </body>
 </html>

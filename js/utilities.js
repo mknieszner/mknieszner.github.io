@@ -1,24 +1,3 @@
-var deferredPrompt;
-
-if ('serviceWorker' in navigator) {
-    navigator.serviceWorker
-        .register('/sw.js')
-        .then(function () {
-            console.log('Service worker registered!');
-        })
-        .catch(function(err) {
-            console.log(err);
-        });
-}
-
-window.addEventListener('beforeinstallprompt', function (event) {
-    console.log('beforeinstallprompt fired');
-    event.preventDefault();
-    deferredPrompt = event;
-    return false;
-});
-
-
 const changeBrowserColor = function (color) {
     const oldMeta = document.getElementsByName('theme-color')[0];
     document.getElementsByTagName('head')[0].removeChild(oldMeta);
@@ -39,32 +18,66 @@ const rotateYElem = function (element, transformString) {
     element.style.transform = rotateYString;
 };
 
-const displayElem = function (element, transformString) {
-    element.style.display = transformString;
-};
+// set up text to print, each item in array is new line
+const aText = new Array(
+    "PL BIO Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium beatae dicta expedita libero maiores nam nobis recusandae similique vero vitae. Architecto assumenda aut istinctio facere fugiat quae quasi veniam vero. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium beatae dicta expedita libero maiores nam nobis recusandae similique vero vitae. Architecto assumenda aut distinctio facere fugiat quae quasi veniam vero."
+);
+
+var iSpeed = 30; // time delay of print out
+var iIndex = 0; // start printing array at this posision
+var iArrLength = aText[0].length; // the length of the text array
+var iScrollAt = 20; // start scrolling up at this many lines
+
+var iTextPos = 0; // initialise text position
+var sContents = ''; // initialise contents variable
+var iRow; // initialise current row
+
+function typeContent(contentId)
+{
+    sContents =  ' ';
+    iRow = Math.max(0, iIndex-iScrollAt);
+    var destination = document.getElementById(contentId);
+
+    while ( iRow < iIndex ) {
+        sContents += aText[iRow++] + '<br />';
+    }
+    destination.innerHTML = sContents + aText[iIndex].substring(0, iTextPos) + "_";
+    if ( iTextPos++ === iArrLength ) {
+        iTextPos = 0;
+        iIndex++;
+        if ( iIndex !== aText.length || destination.getAttribute("typed") === "true") {
+            iArrLength = aText[iIndex].length;
+            setTimeout("typeContent(contentId)", 500);
+        } else {
+            destination.setAttribute("typed", "true");
+        }
+    } else {
+        setTimeout("typeContent(contentId)", iSpeed);
+    }
+}
 
 const onPageScroll = function () {
-    let colors = ['#436186', '#418910', '#651d32', '#500778', '#d4af37'];
+    let colors = ['#436186', '#500778', '#418910', '#651d32', '#d4af37'];
     let touchLastX;
     let touchStartX;
     let touchStartY;
     let touchLastY;
     let fronts = document.getElementsByClassName('card__side--front');
     let backs = document.getElementsByClassName('card__side--back');
+    let containers = document.getElementsByClassName('card-container');
 
     let nowPageNr = 0;
     let nowIsFront = true;
     let nextPageNr;
     let nextIsFront;
-    const bodyEl = document.querySelector('main');
 
-    bodyEl.ontouchstart = (event) => {
-        event.preventDefault()
+    document.querySelector('main').addEventListener('touchstart', () => {
+
         touchStartX = event.touches[0].pageX;
         touchStartY = event.touches[0].pageY;
-    };
+    },  {passive: true});
 
-    bodyEl.ontouchend = (event) => {
+    document.querySelector('main').addEventListener('touchend', () =>  {
         touchLastX = event.changedTouches[0].pageX;
         touchLastY = event.changedTouches[0].pageY;
 
@@ -73,20 +86,14 @@ const onPageScroll = function () {
             return
         }
 
-
-        // console.log('move');
         let moveDown = (touchStartX - touchLastX) > 0;
         if (moveDown) {
+            containers[nowPageNr].style.zIndex = 10;
             nextPageNr = nowIsFront ? nowPageNr : nowPageNr + 1;
             nextIsFront = !nowIsFront;
             if (nextPageNr !== backs.length) {
                 nextPageNr = nowIsFront ? nowPageNr : nowPageNr + 1;
                 nextIsFront = !nowIsFront;
-                // console.log('down move');
-                // console.log(nowIsFront);
-                // console.log(nowPageNr);
-                // console.log(nextIsFront);
-                // console.log(nextPageNr);
                 if (nowIsFront) {
                     rotateYElem(fronts[nowPageNr], "-180deg");
                     rotateYElem(backs[nowPageNr], "0deg");
@@ -100,11 +107,6 @@ const onPageScroll = function () {
         } else {
             nextPageNr = nowIsFront ? nowPageNr - 1 : nowPageNr;
             nextIsFront = !nowIsFront;
-            // console.log('up move');
-            // console.log(nowIsFront);
-            // console.log(nowPageNr);
-            // console.log(nextIsFront);
-            // console.log(nextPageNr);
             if (nextPageNr !== -1) {
                 if (nowIsFront) {
                     rotateYElem(fronts[nowPageNr], "180deg");
@@ -118,7 +120,7 @@ const onPageScroll = function () {
             }
         }
         changeBrowserColor(colors[nowPageNr]);
-    }
+    }, {passive: true});
 
 };
 
@@ -171,37 +173,10 @@ const changeLang = function (lang) {
     hideSelectedLanguageButton(lang);
 };
 
-function openMyJiraInNewWindow() {
-    const win = window.open('http://my-jira.knieszner.pl/', '_blank');
+function openInNewWindow(url) {
+    const win = window.open(url, '_blank');
     win.focus();
 }
 
-function fetchMyJiraStatus(url, timeout, limit) {
-    fetch(url)
-        .then(function (response) {
-            if (response.status !== 200 && limit) {
-                setTimeout(fetchMyJiraStatus, timeout, url, timeout, --limit);
-            }
-            return response.json()
-        })
-        .then(function (running) {
-            if (running) {
-                displayElem(document.getElementById('my-jira-link-not-ready'), 'none');
-                displayElem(document.getElementById('my-jira-link-ready'), 'block');
-            } else {
-                throw Error('Api exception');
-            }
-        })
-        .catch(function () {
-            displayElem(document.getElementById('my-jira-link-not-ready'), 'flex');
-            displayElem(document.getElementById('my-jira-link-ready'), 'none');
-        })
-}
-
-const initMyJira = function () {
-    fetchMyJiraStatus('https://my-jira.herokuapp.com/health/running', 10000, 10);
-    changeLang("PL");
-};
-
-initMyJira();
+changeLang("PL");
 onPageScroll();

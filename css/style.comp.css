@@ -284,7 +284,7 @@ body {
   margin-bottom: 8rem !important; }
 
 .main-container {
-  background-image: linear-gradient(0.3turn, rgba(27, 43, 52, 0.2), rgba(54, 56, 63, 0.01), rgba(13, 17, 26, 0.2)), url("/img/card-back.png");
+  background-image: linear-gradient(0.3turn, rgba(27, 43, 52, 0.2), rgba(54, 56, 63, 0.01), rgba(13, 17, 26, 0.2)), url("/img/card-black.webp");
   height: 100vh;
   display: grid;
   grid-template-columns: min-content minmax(45vw, 1fr);
@@ -299,8 +299,6 @@ body {
       grid-template-columns: min-content minmax(45vw, 1fr);
       height: 100vh;
       margin: 0; } }
-  :not(.main-container:target) {
-    display: none; }
 
 #st0:hover .st0 {
   animation: 1s animateOpacity forwards 1 ease-out; }
@@ -313,7 +311,10 @@ body {
   @media only screen and (max-width: 56.25em) {
     .navigation {
       display: inline; } }
-  @media only screen and (max-width: 37.5em) {
+  @media only screen and (max-height: 37.5rem) {
+    .navigation {
+      display: none; } }
+  @media only screen and (max-width: 37.5rem) {
     .navigation {
       display: none; } }
   .navigation__checkbox {
@@ -378,7 +379,9 @@ body {
     text-decoration: none;
     text-transform: uppercase;
     background-size: 230%;
-    transition: all .4s; }
+    transition: all .4s;
+    border: 1px solid;
+    border-radius: 10px; }
     .navigation__link:link span, .navigation__link:visited span {
       margin-right: 1.5rem;
       display: inline-block; }
@@ -389,29 +392,39 @@ body {
     cursor: pointer; }
   .navigation__link--me {
     color: #5374a6;
+    border-color: #5374a6;
     background-image: linear-gradient(120deg, transparent 0%, transparent 50%, #5374a6 50%); }
     .navigation__link--me:hover {
-      color: #fff; }
+      color: #fff;
+      border-color: #5374a6; }
   .navigation__link--free-time {
     color: #fac863;
+    border-color: #fac863;
     background-image: linear-gradient(120deg, transparent 0%, transparent 50%, #fac863 50%); }
     .navigation__link--free-time:hover {
-      color: #fff; }
+      color: #fff;
+      border-color: #fac863; }
   .navigation__link--work {
     color: #87be34;
+    border-color: #87be34;
     background-image: linear-gradient(120deg, transparent 0%, transparent 50%, #87be34 50%); }
     .navigation__link--work:hover {
-      color: #fff; }
+      color: #fff;
+      border-color: #87be34; }
   .navigation__link--education {
     color: #ec4949;
+    border-color: #ec4949;
     background-image: linear-gradient(120deg, transparent 0%, transparent 50%, #ec4949 50%); }
     .navigation__link--education:hover {
-      color: #fff; }
+      color: #fff;
+      border-color: #ec4949; }
   .navigation__link--personal-projects {
     color: #5500a7;
+    border-color: #5500a7;
     background-image: linear-gradient(120deg, transparent 0%, transparent 50%, #5500a7 50%); }
     .navigation__link--personal-projects:hover {
-      color: #fff; }
+      color: #fff;
+      border-color: #5500a7; }
   .navigation__checkbox:checked ~ .navigation__background {
     transform: scale(80); }
   .navigation__checkbox:checked ~ .navigation__nav {
@@ -422,7 +435,7 @@ body {
     margin-top: 3.5rem; }
     .navigation__icon, .navigation__icon::before, .navigation__icon::after {
       width: 3rem;
-      height: .2rem;
+      height: 2px;
       background-color: #333;
       display: inline-block; }
     .navigation__icon::before, .navigation__icon::after {
@@ -508,13 +521,19 @@ body {
   bottom: 30px;
   right: 50px;
   display: flex; }
-  @media only screen and (max-width: 37.5em) {
+  @media only screen and (max-height: 37.5rem) {
     .language-navigation {
-      z-index: 1;
+      z-index: 100;
       position: absolute;
       right: 20px;
-      top: 20px;
-      bottom: unset;
+      bottom: 20px;
+      display: flex; } }
+  @media only screen and (max-width: 37.5rem) {
+    .language-navigation {
+      z-index: 100;
+      position: absolute;
+      right: 20px;
+      bottom: 20px;
       display: flex; } }
 
 .main-image {
@@ -676,7 +695,13 @@ a:active, a:focus, a:hover {
         width: 97vw; }
       .card-container .btn--transparent {
         display: none; } }
-  @media only screen and (max-width: 37.5em) {
+  @media only screen and (max-height: 37.5rem) {
+    .card-container {
+      width: 100vw;
+      height: 100vh;
+      opacity: 1;
+      align-items: self-start; } }
+  @media only screen and (max-width: 37.5rem) {
     .card-container {
       width: 100vw;
       height: 100vh;
@@ -696,11 +721,11 @@ a:active, a:focus, a:hover {
         transform: rotateY(0); } }
   .card:hover .card__icon {
     transform: translateX(-50%) rotateY(360deg);
-    margin: 2rem 50%; }
+    margin: 2rem 50% 0 50%; }
     @media only screen and (max-width: 75em) {
       .card:hover .card__icon {
         transform: none;
-        margin: 2rem; } }
+        margin: 2rem 0 0 2rem; } }
   .card:hover .card__header-text {
     opacity: 0; }
     @media only screen and (max-width: 75em) {
@@ -708,7 +733,11 @@ a:active, a:focus, a:hover {
         opacity: 1; } }
   .card:hover .card__side--back {
     transform: rotateY(0deg); }
-  @media only screen and (max-width: 37.5em) {
+  @media only screen and (max-height: 37.5rem) {
+    .card {
+      width: 100%;
+      height: 98%; } }
+  @media only screen and (max-width: 37.5rem) {
     .card {
       width: 100%;
       height: 98%; } }
@@ -724,7 +753,11 @@ a:active, a:focus, a:hover {
       .card__side {
         position: relative;
         height: 100%; } }
-    @media only screen and (max-width: 37.5em) {
+    @media only screen and (max-height: 37.5rem) {
+      .card__side {
+        transition: all 0.5s ease-in-out;
+        backface-visibility: hidden; } }
+    @media only screen and (max-width: 37.5rem) {
       .card__side {
         transition: all 0.5s ease-in-out;
         backface-visibility: hidden; } }
@@ -733,7 +766,10 @@ a:active, a:focus, a:hover {
         position: absolute;
         top: 0;
         transform: rotateY(0); } }
-    @media only screen and (max-width: 37.5em) {
+    @media only screen and (max-height: 37.5rem) {
+      .card__side--front {
+        transform: rotateY(180deg); } }
+    @media only screen and (max-width: 37.5rem) {
       .card__side--front {
         transform: rotateY(180deg); } }
     @media only screen and (max-width: 75em) {
@@ -748,50 +784,82 @@ a:active, a:focus, a:hover {
           top: 50vh;
           height: 50vh;
           transform: rotateY(0); } }
-      @media only screen and (max-width: 37.5em) {
+      @media only screen and (max-height: 37.5rem) {
         .card__side--back {
           position: absolute;
           height: 100%;
           top: 0;
           transform: rotateY(180deg); } }
-    @media only screen and (max-width: 37.5em) {
+      @media only screen and (max-width: 37.5rem) {
+        .card__side--back {
+          position: absolute;
+          height: 100%;
+          top: 0;
+          transform: rotateY(180deg); } }
+    @media only screen and (max-height: 37.5rem) {
+      .card__side {
+        transition: all 0.5s ease-in-out; } }
+    @media only screen and (max-width: 37.5rem) {
       .card__side {
         transition: all 0.5s ease-in-out; } }
     .card__side--me {
       box-shadow: 1rem 1rem 1rem rgba(67, 97, 134, 0.3);
       background-image: linear-gradient(175deg, transparent 30%, rgba(83, 116, 166, 0.1) 75%, rgba(83, 116, 166, 0.2)), linear-gradient(100deg, transparent 30%, rgba(83, 116, 166, 0.1) 70%, rgba(91, 129, 182, 0.2)); }
-    @media only screen and (max-width: 37.5em) {
+    @media only screen and (max-height: 37.5rem) {
       .card__side--front.card__side--me {
         transform: rotateY(0deg); } }
-    @media only screen and (max-width: 37.5em) {
+    @media only screen and (max-width: 37.5rem) {
+      .card__side--front.card__side--me {
+        transform: rotateY(0deg); } }
+    @media only screen and (max-height: 37.5rem) {
+      .card__side--back.card__side--me {
+        box-shadow: 1rem 1rem 1rem rgba(67, 97, 134, 0.3);
+        background-image: linear-gradient(175deg, transparent 30%, rgba(83, 116, 166, 0.1) 75%, rgba(83, 116, 166, 0.2)), linear-gradient(100deg, transparent 30%, rgba(83, 116, 166, 0.1) 70%, rgba(91, 129, 182, 0.2)); } }
+    @media only screen and (max-width: 37.5rem) {
       .card__side--back.card__side--me {
         box-shadow: 1rem 1rem 1rem rgba(67, 97, 134, 0.3);
         background-image: linear-gradient(175deg, transparent 30%, rgba(83, 116, 166, 0.1) 75%, rgba(83, 116, 166, 0.2)), linear-gradient(100deg, transparent 30%, rgba(83, 116, 166, 0.1) 70%, rgba(91, 129, 182, 0.2)); } }
     .card__side--work {
       box-shadow: 1rem 1rem 1rem rgba(155, 190, 46, 0.3);
       background-image: linear-gradient(175deg, transparent 30%, rgba(135, 190, 52, 0.1) 75%, rgba(155, 190, 46, 0.2)), linear-gradient(100deg, transparent 30%, rgba(169, 190, 46, 0.1) 70%, rgba(155, 190, 46, 0.2)); }
-    @media only screen and (max-width: 37.5em) {
+    @media only screen and (max-height: 37.5rem) {
+      .card__side--back.card__side--work {
+        box-shadow: 1rem 1rem 1rem rgba(155, 190, 46, 0.3);
+        background-image: linear-gradient(175deg, transparent 30%, rgba(135, 190, 52, 0.1) 75%, rgba(155, 190, 46, 0.2)), linear-gradient(100deg, transparent 30%, rgba(169, 190, 46, 0.1) 70%, rgba(155, 190, 46, 0.2)); } }
+    @media only screen and (max-width: 37.5rem) {
       .card__side--back.card__side--work {
         box-shadow: 1rem 1rem 1rem rgba(155, 190, 46, 0.3);
         background-image: linear-gradient(175deg, transparent 30%, rgba(135, 190, 52, 0.1) 75%, rgba(155, 190, 46, 0.2)), linear-gradient(100deg, transparent 30%, rgba(169, 190, 46, 0.1) 70%, rgba(155, 190, 46, 0.2)); } }
     .card__side--education {
       box-shadow: 1rem 1rem 1rem rgba(249, 118, 94, 0.3);
       background-image: linear-gradient(175deg, transparent 30%, rgba(236, 73, 73, 0.1) 75%, rgba(236, 95, 103, 0.1)), linear-gradient(100deg, transparent 30%, rgba(236, 73, 73, 0.1) 70%, rgba(236, 95, 103, 0.1)); }
-    @media only screen and (max-width: 37.5em) {
+    @media only screen and (max-height: 37.5rem) {
+      .card__side--back.card__side--education {
+        box-shadow: 1rem 1rem 1rem rgba(249, 118, 94, 0.3);
+        background-image: linear-gradient(175deg, transparent 30%, rgba(236, 73, 73, 0.1) 75%, rgba(236, 95, 103, 0.1)), linear-gradient(100deg, transparent 30%, rgba(236, 73, 73, 0.1) 70%, rgba(236, 95, 103, 0.1)); } }
+    @media only screen and (max-width: 37.5rem) {
       .card__side--back.card__side--education {
         box-shadow: 1rem 1rem 1rem rgba(249, 118, 94, 0.3);
         background-image: linear-gradient(175deg, transparent 30%, rgba(236, 73, 73, 0.1) 75%, rgba(236, 95, 103, 0.1)), linear-gradient(100deg, transparent 30%, rgba(236, 73, 73, 0.1) 70%, rgba(236, 95, 103, 0.1)); } }
     .card__side--personal-projects {
       box-shadow: 1rem 1rem 2rem rgba(85, 0, 167, 0.3);
       background-image: linear-gradient(175deg, transparent 30%, rgba(85, 0, 167, 0.1) 75%, rgba(77, 0, 154, 0.2)), linear-gradient(100deg, transparent 30%, rgba(71, 0, 142, 0.1) 70%, rgba(77, 0, 154, 0.2)); }
-    @media only screen and (max-width: 37.5em) {
+    @media only screen and (max-height: 37.5rem) {
+      .card__side--back.card__side--personal-projects {
+        box-shadow: 1rem 1rem 2rem rgba(85, 0, 167, 0.3);
+        background-image: linear-gradient(175deg, transparent 30%, rgba(85, 0, 167, 0.1) 75%, rgba(77, 0, 154, 0.2)), linear-gradient(100deg, transparent 30%, rgba(71, 0, 142, 0.1) 70%, rgba(77, 0, 154, 0.2)); } }
+    @media only screen and (max-width: 37.5rem) {
       .card__side--back.card__side--personal-projects {
         box-shadow: 1rem 1rem 2rem rgba(85, 0, 167, 0.3);
         background-image: linear-gradient(175deg, transparent 30%, rgba(85, 0, 167, 0.1) 75%, rgba(77, 0, 154, 0.2)), linear-gradient(100deg, transparent 30%, rgba(71, 0, 142, 0.1) 70%, rgba(77, 0, 154, 0.2)); } }
     .card__side--free-time {
       box-shadow: 1rem 1rem 1rem rgba(244, 172, 0, 0.3);
       background-image: linear-gradient(175deg, transparent 30%, rgba(250, 200, 99, 0.1) 75%, rgba(244, 185, 42, 0.2)), linear-gradient(100deg, transparent 30%, rgba(250, 200, 99, 0.1) 70%, rgba(244, 185, 42, 0.2)); }
-    @media only screen and (max-width: 37.5em) {
+    @media only screen and (max-height: 37.5rem) {
+      .card__side--back.card__side--free-time {
+        box-shadow: 1rem 1rem 1rem rgba(244, 172, 0, 0.3);
+        background-image: linear-gradient(175deg, transparent 30%, rgba(250, 200, 99, 0.1) 75%, rgba(244, 185, 42, 0.2)), linear-gradient(100deg, transparent 30%, rgba(250, 200, 99, 0.1) 70%, rgba(244, 185, 42, 0.2)); } }
+    @media only screen and (max-width: 37.5rem) {
       .card__side--back.card__side--free-time {
         box-shadow: 1rem 1rem 1rem rgba(244, 172, 0, 0.3);
         background-image: linear-gradient(175deg, transparent 30%, rgba(250, 200, 99, 0.1) 75%, rgba(244, 185, 42, 0.2)), linear-gradient(100deg, transparent 30%, rgba(250, 200, 99, 0.1) 70%, rgba(244, 185, 42, 0.2)); } }
@@ -816,9 +884,18 @@ a:active, a:focus, a:hover {
     grid-template-columns: repeat(2, 1fr);
     transform-style: preserve-3d;
     -webkit-transform-style: preserve-3d; }
-    @media only screen and (max-width: 37.5em) {
+    @media only screen and (max-height: 37.5rem) {
       .card__header {
-        backface-visibility: hidden; } }
+        backface-visibility: hidden;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between; } }
+    @media only screen and (max-width: 37.5rem) {
+      .card__header {
+        backface-visibility: hidden;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between; } }
   .card__icon {
     margin-top: 2rem;
     margin-left: 2rem;
@@ -827,8 +904,14 @@ a:active, a:focus, a:hover {
     min-width: 3rem;
     fill: #fff;
     transition: all 1.5s ease-in-out; }
-    @media only screen and (max-width: 37.5em) {
+    @media only screen and (max-height: 37.5rem) {
       .card__icon {
+        margin-top: 0;
+        min-width: 10rem;
+        width: 10rem; } }
+    @media only screen and (max-width: 37.5rem) {
+      .card__icon {
+        margin-top: 0;
         min-width: 10rem;
         width: 10rem; } }
   .card__header-text {
@@ -840,9 +923,14 @@ a:active, a:focus, a:hover {
     transition: all 1.5s ease-in-out;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden; }
-    @media only screen and (max-width: 37.5em) {
+    @media only screen and (max-height: 37.5rem) {
       .card__header-text {
-        transform: translateZ(50px); } }
+        margin-top: 1rem;
+        margin-right: 2rem; } }
+    @media only screen and (max-width: 37.5rem) {
+      .card__header-text {
+        margin-top: 1rem;
+        margin-right: 2rem; } }
   .card__main {
     margin: 2rem;
     margin-bottom: auto;
@@ -852,13 +940,17 @@ a:active, a:focus, a:hover {
     -webkit-backface-visibility: hidden;
     transform-style: preserve-3d;
     -webkit-transform-style: preserve-3d; }
-    @media only screen and (max-width: 37.5em) {
+    @media only screen and (max-height: 37.5rem) {
       .card__main {
         text-align: center;
-        font-size: 1.7rem; } }
+        font-size: 1.5rem; } }
+    @media only screen and (max-width: 37.5rem) {
+      .card__main {
+        text-align: center;
+        font-size: 1.5rem; } }
   .card__footer {
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     margin: 3rem;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
@@ -867,12 +959,29 @@ a:active, a:focus, a:hover {
   .card__link {
     color: #f7f7f7; }
 
-@media only screen and (max-width: 37.5em) {
-  #my-jira-link-container {
-    display: none; } }
-
-#my-jira-link-ready {
-  display: none; }
+#projects-link-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30px;
+  position: relative;
+  z-index: 2000; }
+  @media only screen and (max-height: 37.5rem) {
+    #projects-link-container {
+      text-align: center;
+      font-size: 2rem; } }
+  @media only screen and (max-width: 37.5rem) {
+    #projects-link-container {
+      text-align: center;
+      font-size: 2rem; } }
+  #projects-link-container a {
+    cursor: pointer;
+    margin-bottom: 5px;
+    display: inline-block; }
+  #projects-link-container a:hover {
+    transition: 0.2s all ease-out;
+    transform: scale(1.1);
+    text-shadow: 0 0 20px; }
 
 .btn {
   position: relative;
