@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en" data-motion="off">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#f0f2ec" id="theme-color">
+  <meta name="description" content="Selected proofs of concept by Mateusz Knieszner. Explore Agent Scanner and Herald, at the intersection of software architecture and agentic AI.">
+  <meta name="author" content="Mateusz Knieszner">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mknieszner.github.io/">
+  <link rel="canonical" href="https://mknieszner.github.io/">
+  <meta property="og:title" content="Mateusz Knieszner — Ideas. Made real.">
+  <meta property="og:description" content="Architecture meets agentic AI. Explore selected proofs of concept: Agent Scanner and Herald.">
+  <meta name="twitter:card" content="summary">
+  <title>Mateusz Knieszner — Ideas. Made real.</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%2319251d'/%3E%3Ctext x='32' y='39' text-anchor='middle' font-family='Arial,sans-serif' font-size='23' letter-spacing='-2' fill='%23c2f769'%3Emk.%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./script.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#projects">Skip to projects</a>
+  <div class="page">
+    <header class="site-header">
+      <div class="identity">
+        <span class="monogram" aria-hidden="true">mk.</span>
+        <span class="name">Mateusz Knieszner</span>
+      </div>
+      <p class="role caption">Solution Architect</p>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="intro-title">
+        <div class="hero-copy">
+          <p class="eyebrow caption"><span class="signal-dot" aria-hidden="true"></span>Independent experiments</p>
+          <h1 id="intro-title"><span>Ideas.</span><span class="accent">Made real.</span></h1>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="sculpture-fallback"></div>
+          <canvas id="signal-canvas"></canvas>
+        </div>
+        <p class="hero-signature caption">Architecture × Agentic AI</p>
+      </section>
+
+      <section class="projects" id="projects" aria-label="Selected proofs of concept">
+        <!-- Duplicate a project link to add another POC. Each card is one accessible link. -->
+        <a class="project scanner" href="https://mknieszner.github.io/agent-scanner/#/" target="_blank" rel="noopener noreferrer" aria-labelledby="scanner-title" aria-describedby="scanner-description scanner-new-tab">
+          <div class="project-meta"><span class="caption">01 / Observability</span><span class="caption">POC</span></div>
+          <div class="project-art scanner-art" aria-hidden="true">
+            <div class="radar"><span class="radar-axis x"></span><span class="radar-axis y"></span><span class="radar-point"></span><span class="radar-point"></span><span class="radar-point"></span><span class="radar-point"></span></div>
+          </div>
+          <div class="project-copy">
+            <div><h2 id="scanner-title">Agent Scanner</h2><p id="scanner-description">Inside the agent’s workflow.</p></div>
+            <span class="project-arrow" aria-hidden="true">↗</span>
+          </div>
+          <span class="sr-only" id="scanner-new-tab">Opens in a new tab.</span>
+        </a>
+
+        <a class="project herald" href="https://mknieszner.github.io/herald/" target="_blank" rel="noopener noreferrer" aria-labelledby="herald-title" aria-describedby="herald-description herald-new-tab">
+          <div class="project-meta"><span class="caption">02 / Guided work</span><span class="caption">POC</span></div>
+          <div class="project-art herald-art" aria-hidden="true">
+            <div class="sheet"></div><div class="sheet"></div><div class="sheet"><span class="sheet-lines"></span><span class="sheet-mark"></span></div>
+          </div>
+          <div class="project-copy">
+            <div><h2 id="herald-title">Herald</h2><p id="herald-description">Expertise, built into the process.</p></div>
+            <span class="project-arrow" aria-hidden="true">↗</span>
+          </div>
+          <span class="sr-only" id="herald-new-tab">Opens in a new tab.</span>
+        </a>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p class="footer-heading caption">Selected proofs of concept</p>
+      <div class="footer-tools">
+        <div class="preferences" hidden>
+          <button class="utility" id="motion-toggle" type="button" aria-pressed="false" aria-label="Pause animations"><span class="motion-symbol" aria-hidden="true"></span><span id="motion-label">Pause motion</span></button>
+          <button class="utility" id="theme-toggle" type="button" aria-label="Switch to dark theme"><span class="theme-symbol" aria-hidden="true"></span><span id="theme-label">Dark</span></button>
+        </div>
+        <nav class="footer-links" aria-label="Contact links">
+          <a class="utility" href="mailto:mateusz@knieszner.pl">Contact <span aria-hidden="true">↗</span></a>
+          <a class="utility" href="https://github.com/mknieszner" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>
+        </nav>
+      </div>
+    </footer>
+  </div>
+
+</body>
+</html>
