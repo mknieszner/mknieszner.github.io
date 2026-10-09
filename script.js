@@ -1,20 +1,11 @@
 'use strict';
 
-// Apply a saved appearance before the first paint; storage is optional.
-try {
-  const theme = localStorage.getItem('signal-theme');
-  if (theme === 'light' || theme === 'dark') document.documentElement.dataset.theme = theme;
-} catch (_) {}
-
 function initializeSignal() {
   const root = document.documentElement;
   const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
-  const darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
   const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
   const motionButton = document.getElementById('motion-toggle');
   const motionLabel = document.getElementById('motion-label');
-  const themeButton = document.getElementById('theme-toggle');
-  const themeLabel = document.getElementById('theme-label');
   const canvas = document.getElementById('signal-canvas');
   const hero = document.querySelector('.hero');
   const context = canvas.getContext('2d', { alpha: true });
@@ -34,21 +25,11 @@ function initializeSignal() {
   const saveStorage = (key, value) => { try { localStorage.setItem(key, value); } catch (_) {} };
   preferredMotion = readStorage('signal-motion') !== 'off';
 
-  function isDark() { return root.dataset.theme ? root.dataset.theme === 'dark' : darkQuery.matches; }
   function canAnimate() { return preferredMotion && !motionQuery.matches && visible && !document.hidden; }
 
   function readPalette() {
     const style = getComputedStyle(root);
     palette = { ink: style.getPropertyValue('--ink').trim(), accent: style.getPropertyValue('--accent').trim(), muted: style.getPropertyValue('--muted').trim() };
-  }
-
-  function applyTheme() {
-    const dark = isDark();
-    themeLabel.textContent = dark ? 'Light' : 'Dark';
-    themeButton.setAttribute('aria-label', dark ? 'Switch to light theme' : 'Switch to dark theme');
-    document.getElementById('theme-color').setAttribute('content', dark ? '#101610' : '#f0f2ec');
-    readPalette();
-    draw();
   }
 
   function applyMotion() {
@@ -153,12 +134,6 @@ function initializeSignal() {
     draw();
   }
 
-  themeButton.addEventListener('click', () => {
-    const theme = isDark() ? 'light' : 'dark';
-    root.dataset.theme = theme;
-    saveStorage('signal-theme', theme);
-    applyTheme();
-  });
   motionButton.addEventListener('click', () => {
     if (motionQuery.matches) return;
     preferredMotion = !preferredMotion;
@@ -166,7 +141,6 @@ function initializeSignal() {
     applyMotion();
   });
   motionQuery.addEventListener('change', applyMotion);
-  darkQuery.addEventListener('change', applyTheme);
   document.addEventListener('visibilitychange', () => {
     root.dataset.suspended = String(document.hidden);
     applyMotion();
@@ -182,7 +156,7 @@ function initializeSignal() {
   if ('IntersectionObserver' in window) {
     new IntersectionObserver(entries => { visible = entries[0].isIntersecting; applyMotion(); }, { threshold: 0 }).observe(hero);
   }
-  applyTheme();
+  readPalette();
   resize();
   applyMotion();
   document.querySelector('.preferences').hidden = false;

@@ -1,38 +1,16 @@
 :root {
-  color-scheme: light;
-  --paper: #f0f2ec;
-  --ink: #19261f;
-  --muted: #5d6d60;
-  --line: #ccd5c9;
-  --accent: #456d27;
-  --lime: #c2f769;
-  --focus: #426d23;
-  --glow: #a8d876;
-  --font: 'DM Sans', 'Segoe UI', Arial, sans-serif;
-  --mono: 'DM Mono', Consolas, monospace;
-  --gutter: clamp(24px, 5.3vw, 80px);
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme='light']) {
-    color-scheme: dark;
-    --paper: #101610;
-    --ink: #f0f3e8;
-    --muted: #a5b2a5;
-    --line: #2e3c30;
-    --accent: #c2f769;
-    --focus: #c2f769;
-    --glow: #95c658;
-  }
-}
-:root[data-theme='dark'] {
   color-scheme: dark;
   --paper: #101610;
   --ink: #f0f3e8;
   --muted: #a5b2a5;
   --line: #2e3c30;
   --accent: #c2f769;
+  --lime: #c2f769;
   --focus: #c2f769;
   --glow: #95c658;
+  --font: 'DM Sans', 'Segoe UI', Arial, sans-serif;
+  --mono: 'DM Mono', Consolas, monospace;
+  --gutter: clamp(24px, 5.3vw, 80px);
 }
 *, *::before, *::after { box-sizing: border-box; }
 html { min-width: 280px; scroll-behavior: smooth; }
@@ -117,7 +95,6 @@ h1 .accent { color: var(--accent); }
 .motion-symbol::before, .motion-symbol::after { content: ''; width: 2px; height: 9px; background: currentColor; }
 [data-motion='off'] .motion-symbol { display: block; width: 0; height: 0; margin-inline: 2px 3px; border-top: 4px solid transparent; border-bottom: 4px solid transparent; border-left: 7px solid currentColor; }
 [data-motion='off'] .motion-symbol::before, [data-motion='off'] .motion-symbol::after { display: none; }
-.theme-symbol { width: 12px; height: 12px; border: 1px solid currentColor; border-radius: 50%; background: linear-gradient(90deg, currentColor 50%, transparent 50%); }
 [data-motion='off'] .radar::before, [data-motion='off'] .sheet,
 [data-suspended='true'] .radar::before, [data-suspended='true'] .sheet { animation-play-state: paused; }
 @keyframes radar-sweep { to { transform: rotate(360deg); } }
@@ -196,7 +173,7 @@ h1 .accent { color: var(--accent); }
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
 @media print {
-  :root, :root[data-theme] { --paper: #fff; --ink: #19261f; --muted: #526052; --accent: #456d27; }
+  :root { color-scheme: light; --paper: #fff; --ink: #19261f; --muted: #526052; --accent: #456d27; }
   .page { min-height: auto; }
   .hero { min-height: 320px; }
   .preferences, .skip-link { display: none; }
