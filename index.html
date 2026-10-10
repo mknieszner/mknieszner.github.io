@@ -18,7 +18,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles.css?v=4">
+  <link rel="stylesheet" href="./styles.css?v=5">
   <script src="./script.js?v=2"></script>
 </head>
 <body>
@@ -46,32 +46,47 @@
       </section>
 
       <section class="projects" id="projects" aria-label="Selected proofs of concept">
-        <!-- Duplicate a project link to add another POC. Each card is one accessible link. -->
-        <a class="project scanner" href="https://mknieszner.github.io/agent-scanner/#/" target="_blank" rel="noopener noreferrer" aria-labelledby="scanner-title" aria-describedby="scanner-description scanner-new-tab">
+        <!-- Each card has separate demo and README links. The demo link covers the card. -->
+        <article class="project scanner" aria-labelledby="scanner-title">
+          <a class="project-link" href="https://mknieszner.github.io/agent-scanner/#/" target="_blank" rel="noopener noreferrer" aria-labelledby="scanner-title" aria-describedby="scanner-description scanner-new-tab"></a>
           <div class="project-meta"><span class="caption">01 / Observability</span><span class="caption">POC</span></div>
           <div class="project-art scanner-art" aria-hidden="true">
             <div class="radar"><span class="radar-axis x"></span><span class="radar-axis y"></span><span class="radar-point"></span><span class="radar-point"></span><span class="radar-point"></span><span class="radar-point"></span></div>
           </div>
           <div class="project-copy">
             <div><h2 id="scanner-title">Agent Scanner</h2><p id="scanner-description">Inside the agent’s workflow.</p></div>
-            <span class="project-arrow" aria-hidden="true">↗</span>
+            <div class="project-actions">
+              <a class="project-readme" href="https://github.com/mknieszner/agent-scanner/blob/gh-pages/README.md" target="_blank" rel="noopener noreferrer" aria-label="View Agent Scanner README (opens in a new tab)">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M14 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8l-5-5Z"/><path d="M14 3v5h5M8.5 12h7M8.5 16h5"/></svg>
+                <span class="project-tooltip" aria-hidden="true">View README</span>
+              </a>
+              <span class="project-arrow" aria-hidden="true">↗</span>
+            </div>
           </div>
           <span class="sr-only" id="scanner-new-tab">Opens in a new tab.</span>
-        </a>
+        </article>
 
-        <a class="project herald" href="https://mknieszner.github.io/herald/" target="_blank" rel="noopener noreferrer" aria-labelledby="herald-title" aria-describedby="herald-description herald-new-tab">
+        <article class="project herald" aria-labelledby="herald-title">
+          <a class="project-link" href="https://mknieszner.github.io/herald/" target="_blank" rel="noopener noreferrer" aria-labelledby="herald-title" aria-describedby="herald-description herald-new-tab"></a>
           <div class="project-meta"><span class="caption">02 / Guided work</span><span class="caption">POC</span></div>
           <div class="project-art herald-art" aria-hidden="true">
             <div class="sheet"></div><div class="sheet"></div><div class="sheet"><span class="sheet-lines"></span><span class="sheet-mark"></span></div>
           </div>
           <div class="project-copy">
             <div><h2 id="herald-title">Herald</h2><p id="herald-description">Expertise, built into the process.</p></div>
-            <span class="project-arrow" aria-hidden="true">↗</span>
+            <div class="project-actions">
+              <a class="project-readme" href="https://github.com/mknieszner/herald/blob/gh-pages/README.md" target="_blank" rel="noopener noreferrer" aria-label="View Herald README (opens in a new tab)">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M14 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8l-5-5Z"/><path d="M14 3v5h5M8.5 12h7M8.5 16h5"/></svg>
+                <span class="project-tooltip" aria-hidden="true">View README</span>
+              </a>
+              <span class="project-arrow" aria-hidden="true">↗</span>
+            </div>
           </div>
           <span class="sr-only" id="herald-new-tab">Opens in a new tab.</span>
-        </a>
+        </article>
 
-        <a class="project three-js" href="https://mknieszner.github.io/3d-js/#/" target="_blank" rel="noopener noreferrer" aria-labelledby="three-js-title" aria-describedby="three-js-description three-js-new-tab">
+        <article class="project three-js" aria-labelledby="three-js-title">
+          <a class="project-link" href="https://mknieszner.github.io/3d-js/#/" target="_blank" rel="noopener noreferrer" aria-labelledby="three-js-title" aria-describedby="three-js-description three-js-new-tab"></a>
           <div class="project-meta"><span class="caption">03 / Real-time 3D</span><span class="caption">POC</span></div>
           <div class="project-art galaxy-art" aria-hidden="true">
             <div class="galaxy-stars"></div>
@@ -85,12 +100,19 @@
           </div>
           <div class="project-copy">
             <div><h2 id="three-js-title">3D / JS</h2><p id="three-js-description">Animated worlds. In your browser.</p></div>
-            <span class="project-arrow" aria-hidden="true">↗</span>
+            <div class="project-actions">
+              <a class="project-readme" href="https://github.com/mknieszner/3d-js/blob/main/readme.md" target="_blank" rel="noopener noreferrer" aria-label="View 3D / JS README (opens in a new tab)">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M14 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8l-5-5Z"/><path d="M14 3v5h5M8.5 12h7M8.5 16h5"/></svg>
+                <span class="project-tooltip" aria-hidden="true">View README</span>
+              </a>
+              <span class="project-arrow" aria-hidden="true">↗</span>
+            </div>
           </div>
           <span class="sr-only" id="three-js-new-tab">Opens in a new tab.</span>
-        </a>
+        </article>
 
-        <a class="project paramount" href="https://mknieszner.github.io/paramount/#/" target="_blank" rel="noopener noreferrer" aria-labelledby="paramount-title" aria-describedby="paramount-description paramount-new-tab">
+        <article class="project paramount" aria-labelledby="paramount-title">
+          <a class="project-link" href="https://mknieszner.github.io/paramount/#/" target="_blank" rel="noopener noreferrer" aria-labelledby="paramount-title" aria-describedby="paramount-description paramount-new-tab"></a>
           <div class="project-meta"><span class="caption">04 / Configuration</span><span class="caption">POC</span></div>
           <div class="project-art tuning-art" aria-hidden="true">
             <span class="tuning-track"><i></i></span>
@@ -99,10 +121,16 @@
           </div>
           <div class="project-copy">
             <div><h2 id="paramount-title">Paramount</h2><p id="paramount-description">Parameters. Rules. Possibilities.</p></div>
-            <span class="project-arrow" aria-hidden="true">↗</span>
+            <div class="project-actions">
+              <a class="project-readme" href="https://github.com/mknieszner/paramount/blob/codex/poc-pages/README.md" target="_blank" rel="noopener noreferrer" aria-label="View Paramount README (opens in a new tab)">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M14 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8l-5-5Z"/><path d="M14 3v5h5M8.5 12h7M8.5 16h5"/></svg>
+                <span class="project-tooltip" aria-hidden="true">View README</span>
+              </a>
+              <span class="project-arrow" aria-hidden="true">↗</span>
+            </div>
           </div>
           <span class="sr-only" id="paramount-new-tab">Opens in a new tab.</span>
-        </a>
+        </article>
       </section>
     </main>
 
